@@ -1,9 +1,9 @@
 .header {
   position: sticky;
-  width: 1440px;
+  width: 100vw;
   height: 63px;
   display: flex;
-  margin: 0 39.6px;
+  margin: 0 auto;
   padding: 0 24px;
   border: 1px solid red;
   top: 0;

@@ -6,7 +6,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="/scrips/getProductsCategories.js"></script>
   </head>
   <body>
     <div class="header">
@@ -19,6 +29,17 @@
       </div>
     </div>
 
+    <div class="content">
+      <div>
+        <script id="display_content" data-category="túi xách">
+          getProductsCategories(
+            document.querySelector("#display_content").getAttribute("data-category"),
+            document.querySelector("#display_content").parentElement
+          );
+        </script>
+      </div>
+    </div>
+
     <div class="footer">
       <a href="" class="left">CLOTHES STORE</a>
 
@@ -26,16 +47,16 @@
         <span>Categories</span>
         <ul>
           <li>
-          <a href="">Clothing</a>
-          <ul>
-            <li>
-              <a href="">Hoodies</a>
-            </li>
-            <li>
-              <a href="">Accessories</a>
-            </li>
-          </ul>
-        </li>
+            <a href="">Clothing</a>
+            <ul>
+              <li>
+                <a href="">Hoodies</a>
+              </li>
+              <li>
+                <a href="">Accessories</a>
+              </li>
+            </ul>
+          </li>
           <li>
             <a href="Audio"></a>
             <ul></ul>
@@ -44,7 +65,7 @@
             <a href="">Furniture</a>
             <ul></ul>
           </li>
-        </unl>
+        </ul>
       </div>
     </div>
   </body>
