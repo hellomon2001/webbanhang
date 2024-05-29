@@ -13,14 +13,14 @@ class Products_service {
     if (!id) throw new NotFound();
     const data = await productsModel.findOne({ _id: id });
     if (data)
-      return new ResponseSuccess
+      return new ResponseSuccess(data)
   };
 
   SearchProducts = async (title) => {
     if (!title) throw new NotFound();
     const data = await productsModel.find({ title: { $regex: title } });
     if (data)
-    return new ResponseSuccess
+    return new ResponseSuccess(data)
   };
 }
 

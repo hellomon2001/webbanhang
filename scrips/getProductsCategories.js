@@ -2,12 +2,13 @@ const getProductsCategories = async (categories, elementParent) => {
   try {
     const res = await fetch(`/api/products?category=${categories}`);
     const data = await res.json();
+    console.log(categories);
     console.log(data);
     if (data) {
-      elementParent.innerHTML += `<div class="list_products">
+      elementParent.innerHTML += `<div class="detail_products">
             ${data.data.map(
               (item) => `<div>
-                        <div class="detail_product">
+                        <div class="top">
                             <div class="image-product"> 
                                 <img src="${item.image_bg}" alt="${
                 item.title
