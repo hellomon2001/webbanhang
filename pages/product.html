@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/content.css" />
+    <script src="/scrips/getIDproduct.js"></script>
+    <script src="/scrips/renderDetailProduct.js"></script>
+  </head>
+  <body>
+    <div class="content">
+        <div class="tag">
+            <h3>
+              <a href="/" style="color: black">Trang chủ</a> /
+              <span id="sanpham"></span>
+            </h3>
+          </div>
+          <div class="product_container">
+            <script id="id_product">
+              renderDetailProduct(
+                getIDproduct(),
+                document.querySelector("#id_product").parentElement,
+                document.querySelector("#sanpham")
+              );
+            </script>
+          </div>
+    </div>
+  </body>
+</html>

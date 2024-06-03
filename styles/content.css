@@ -1,3 +1,106 @@
-.content {
-    width: 200px;
+.content {}
+
+.content_container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1440px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem
+}
+
+.name_category {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.name_category p {
+    font-weight: 400;
+    font-family: var(--font-family--);
+    font-size: 1.125rem;
+    line-height: 2rem;
+    color: #000000;
+}
+
+.name_category a {
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-weight: 400;
+    font-family: var(--font-family--);
+    font-size: .875rem;
+    line-height: 1.5rem;
+    color: #3b82f6;
+}
+
+.icon-link-to {
+    transform: rotate(-40deg);
+    transition: all 0.3s ease-in-out;
+}
+
+.name_category a:hover .icon-link-to {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 20;
+    height: 20;
+    fill: none;
+    animation-duration: .15s
+}
+
+.detail_products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    row-gap: 9rem;
+}
+
+.image_product {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--border-box--), var(--bg-box--)
+}
+
+.image_product:hover {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-duration: .15s;
+    width: 100%;
+}
+
+.image_product img{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* .introduce_product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
+
+.information_product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.information_product>p {}
+
+.price_product {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-left: 150px;
 }

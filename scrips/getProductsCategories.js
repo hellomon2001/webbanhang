@@ -2,14 +2,13 @@ const getProductsCategories = async (categories, elementParent) => {
   try {
     const res = await fetch(`/api/products?category=${categories}`);
     const data = await res.json();
-    console.log(categories);
-    console.log(data);
     if (data) {
       elementParent.innerHTML += `<div class="detail_products">
             ${data.data.map(
-              (item) => `<div>
+              (item) => `<div class="introduce_product">
+              <a href="/product.html?sanpham=${item.title}&_id=${item["_id"]}">
                         <div class="top">
-                            <div class="image-product"> 
+                            <div class="image_product"> 
                                 <img src="${item.image_bg}" alt="${
                 item.title
               }"/>
@@ -18,7 +17,7 @@ const getProductsCategories = async (categories, elementParent) => {
 
                         <div class="information_product">
                             <p>${item.title}</p>
-                            <div>
+                            <div class="price_product">
                                 <span>${item.price_origin} đ</span>
                                 <p>${
                                   item.price_origin -
@@ -31,6 +30,6 @@ const getProductsCategories = async (categories, elementParent) => {
         </div>`;
     }
   } catch (error) {
-    console.log("Something wrong!",error);
+    console.log("Something wrong with getProductsCategories!", error);
   }
 };
