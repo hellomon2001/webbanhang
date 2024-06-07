@@ -1,4 +1,3 @@
-
 .header {
   position: sticky;
   top: 0;
@@ -12,10 +11,10 @@
   height: 4rem;
   margin-left: auto;
   margin-right: auto;
-  transition-duration: .2s;
-  animation-duration: .2s;
+  transition-duration: 0.2s;
+  animation-duration: 0.2s;
   background-color: rgba(255, 255, 255);
-  border-bottom: 1px solid #e5e7eb
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .navbar {
@@ -24,40 +23,36 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  font-size: .75rem;
-  font-weight: 400;
-  line-height: 1.25rem;
-  /* max-width: 1440px; */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  color: var(--color--header--);
-  font-family: var(--font--header--);
-  ;
+  color: #4b5563;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.25rem;
 }
 
 .menu {
   display: flex;
   align-items: center;
-  flex-grow: calc(1);
-  /* flex-basis: 0px; */
+  flex: 1 1 0%;
   height: 100%;
 }
 
 .menu button {
+  display: flex;
+  align-items: center;
+  height: 100%;
   cursor: pointer;
-  border-width: 0;
-  /* text-transform: none; */
-  font-family: inherit;
-  font-feature-settings: inherit;
-  font-variation-settings: inherit;
-  font-size: 100%;
-  font-weight: inherit;
-  line-height: inherit;
-  color: inherit;
+  background-color: #ffffff;
+  border: 0 solid #ffffff;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  border: 0 solid #e5e7eb;
+  color: #4b5563;
+  font-family: var(--font--header--);
+  font-size: 100%;
 }
 
 .menu:hover {
