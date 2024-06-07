@@ -10,7 +10,6 @@
   border-bottom-width: 1px;
   animation-duration: .2s;
   background-color: rgba(255, 255, 255);
-  /* border-color: #333333 loi; */
 }
 
 .navbar {
@@ -27,6 +26,7 @@
   padding-right: 1.5rem;
   color: var(--color--header--);
   font-family: var(--font--header--);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .menu {
