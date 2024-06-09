@@ -88,7 +88,7 @@
     margin-top: 1rem;
 }
 
-.information_product>p {
+.information_product p {
     font-weight: 400;
     font-family: var(--font-content--);
     color: #4b5563;
