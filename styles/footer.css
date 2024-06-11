@@ -44,5 +44,127 @@
     line-height: 20px;
     gap: 40px;
     column-gap: 64px;
+}
 
+.column_one {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.column_one span {
+    font-size: 13px;
+    line-height: 22px;
+    font-family: var(--font--header--);
+    font-weight: 500;
+    color: #000000;
+}
+
+.total_ul {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.same_li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--color--header--);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+    font-family: var(--font--header--)
+}
+
+.same_li a {
+    font-weight: 500;
+}
+
+.same_li a:hover {
+    color: var(--color--hover--);
+}
+
+.detail_ul {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-left: 12px;
+    gap: 8px;
+}
+
+.detail_ul li a:hover {
+    color: var(--color--hover--);
+}
+
+.audio {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--color--header--);
+}
+
+.audio a {
+    font-size: 13px;
+    line-height: 22px;
+    font-family: var(--font--header--);
+    font-weight: 500;
+}
+
+.audio a:hover {
+    color: var(--color--hover--);
+}
+
+.furniture {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--color--header--);
+}
+
+.furniture a {
+    font-size: 13px;
+    line-height: 22px;
+    font-family: var(--font--header--);
+    font-weight: 500;
+}
+
+.furniture a:hover {
+    color: var(--color--hover--);
+}
+
+.column_two {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.column_two span {
+    font-size: 13px;
+    line-height: 22px;
+    font-family: var(--font--header--);
+    font-weight: 500;
+    color: #000000;
+}
+
+.sign {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 64px;
+    color: #9ca3af;
+}   
+
+.sign p {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-family: var(--font-content--);
+    font-size: 13px;
+    color: #000000;
+    padding-right: 255px;
+}
+
+.sign p a:hover {
+    color: rgb(230, 219, 219);
+    /* doi mau khac dep hon */
 }
