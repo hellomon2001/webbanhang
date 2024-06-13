@@ -5,12 +5,13 @@ async function renderDetailProduct(id, elementParent, elementName) {
     if (data.meta.success) {
       const { category, image_bg, imagesDetail, price_origin, sale, title } =
         data.data;
-      const galleryImages = [image_bg, ...imagesDetail];
+      // const galleryImages = [image_bg, ...imagesDetail];
+      const galleryImages = [image_bg];
       elementParent.innerHTML += `
                   <div>
                       <div class="image_content">
                           <div class="img_container">
-                              <img id="show" src="${image_bg}" alt="${title}"/>
+
                               <div class="gallery">
                                   ${galleryImages
                                     .map(
@@ -38,3 +39,4 @@ async function renderDetailProduct(id, elementParent, elementName) {
     console.log("Something wrong with renderDetailProduct!", error);
   }
 }
+{/* <img id="show" src="${image_bg}" alt="${title}"/> */}
