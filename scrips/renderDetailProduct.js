@@ -8,22 +8,27 @@ async function renderDetailProduct(id, elementParent, elementName) {
       // const galleryImages = [image_bg, ...imagesDetail];
       const galleryImages = [image_bg];
       elementParent.innerHTML += `
-                  <div>
-                      <div class="image_content">
-                          <div class="img_container">
-
-                              <div class="gallery">
-                                  ${galleryImages
-                                    .map(
-                                      (item) =>
-                                        `<img id="select" src="${item}" />`
-                                    )
-                                    .join("")}
-                              </div>
-                          <div>
+                  <div class="product_info">
+                      <div class="left_description">
+                          <div class="description">
+                            <a href="/index.html">Electronics</a>
+                            <h2 class="title_product">${title}</h2>
+                          </div>
                       </div>
-                      <div class="infor_content">
-                      <p>${title}</p>
+                           
+                      <div class="center_img>
+                        <div class="cover_img">                       
+                          <div class="gallery">
+                          <div class="boder_img">
+                           ${galleryImages
+                             .map((item) => `<img id="select" src="${item}" />` )
+                             .join("")}
+                          </div>  
+                          </div> 
+                        </div>  
+                      </div>
+                     
+                      <div class="right_description">            
                       <div>
                           <span>${price_origin} đ</span>
                           <p>${
@@ -31,12 +36,13 @@ async function renderDetailProduct(id, elementParent, elementName) {
                           } đ</p>      
                       </div>
                       </div>
-                  </div>
-              `;
+                                  `;
       elementName.textContent = data.data.title;
     }
   } catch (error) {
     console.log("Something wrong with renderDetailProduct!", error);
   }
 }
-{/* <img id="show" src="${image_bg}" alt="${title}"/> */}
+{
+  /* <img id="show" src="${image_bg}" alt="${title}"/> */
+}
