@@ -50,20 +50,41 @@
           <div class="overview">
             <h1>WELCOME BACK</h1>
             <p>Sign in to access an enhanced shopping experience.</p>
-            <div>
-              <div>
+            <div class="login">
+              <div class="email">
                 <input
+                  class="input_email"
                   placeholder=""
                   title="Enter a valid email address."
                   type="email"
                   name="email"
                   autocomplete="email"
                 />
-                <label for="email">Email</label>
-                <span>*</span>
-                <input type="password" />
+                <label for="input_email"
+                  >Email
+                  <span>*</span>
+                </label>
               </div>
-              <button>Sign in</button>
+
+              <div class="import_password">
+                <div class="password">
+                  <input
+                    class="input_password"
+                    type="password"
+                    placeholder=""
+                    autocomplete="current-password"
+                    name="password"
+                  />
+                  <label for="input_password"
+                    >Password
+                    <span>*</span>
+                  </label>
+                  <button type="button">
+                    <i class="fa-solid fa-eye-slash icon-link-to-acc"></i>
+                  </button>
+                </div>
+              </div>
+              <button class="sign_in" type="submit">Sign in</button>
             </div>
           </div>
         </div>
