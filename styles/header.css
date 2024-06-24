@@ -59,6 +59,15 @@
   color: var(--color--hover--)
 }
 
+.menu_bar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding-right: 0;
+  width: 25%;
+  
+}
+
 .main_title {
   display: flex;
   align-items: center;
