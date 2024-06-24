@@ -25,10 +25,19 @@
       <div class="cover_navbar">
         <div class="navbar">
           <div class="menu">
-            <button>Menu</button>
+            <button id="toggleButton" type="button">Menu</button>
           </div>
 
-          <div class="menu_bar">
+          <script>
+            renderMenuBar(
+              document
+                .getElementById('toggleButton')
+                .getAttribute("data-category"),
+              document.querySelector("#display_content").parentElement
+            )
+          </script>
+
+          <div class="hidden" id="menu_bar">
             <div>
               <div>
                 <button>*</button>
@@ -68,7 +77,7 @@
               >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
             ></a>
           </div>
-  
+
           <script id="display_content" data-category="Electronics">
             getProductsCategories(
               document
@@ -86,10 +95,7 @@
               >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
             ></a>
           </div>
-  
-          
         </li>
-        
       </ul>
     </div>
 
