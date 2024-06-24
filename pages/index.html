@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/content.css" />
-    
 
     <link
       rel="stylesheet"
@@ -20,6 +19,7 @@
 
     <script src="/scrips/getProductsCategories.js"></script>
   </head>
+
   <body>
     <div class="header">
       <div class="cover_navbar">
@@ -44,22 +44,37 @@
     </div>
 
     <div class="content">
-      <div class="content_container">
-        <div class="name_category">
-          <p>Electronics</p>
-          <a href="#"
-            >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
-          ></a>
-        </div>
-        <script id="display_content" data-category="Electronics">
-          getProductsCategories(
-            document
-              .querySelector("#display_content")
-              .getAttribute("data-category"),
-            document.querySelector("#display_content").parentElement
-          );
-        </script>
-      </div>
+      <ul class="content_container">
+        <li>
+          <div class="name_category">
+            <p>Electronics</p>
+            <a href="#"
+              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
+            ></a>
+          </div>
+  
+          <script id="display_content" data-category="Electronics">
+            getProductsCategories(
+              document
+                .querySelector("#display_content")
+                .getAttribute("data-category"),
+              document.querySelector("#display_content").parentElement
+            );
+          </script>
+        </li>
+
+        <li>
+          <div class="name_category">
+            <p>Computers</p>
+            <a href="#"
+              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
+            ></a>
+          </div>
+  
+          
+        </li>
+        
+      </ul>
     </div>
 
     <div class="footer">
@@ -67,52 +82,57 @@
         <div class="footer_inside">
           <a href="" class="left">CLOTHES STORE</a>
 
-        <div class="right">
-          <div class="column_one">
-            <span>Categories</span>
-          <ul class="total_ul">
-            <li class="same_li">
-              <a href="">Clothing</a>
-              <ul class="detail_ul">
-                <li>
-                  <a href="">Hoodies</a>
+          <div class="right">
+            <div class="column_one">
+              <span>Categories</span>
+              <ul class="total_ul">
+                <li class="same_li">
+                  <a href="">Clothing</a>
+                  <ul class="detail_ul">
+                    <li>
+                      <a href="">Hoodies</a>
+                    </li>
+                    <li>
+                      <a href="">Accessories</a>
+                    </li>
+                  </ul>
                 </li>
-                <li>
-                  <a href="">Accessories</a>
+                <li class="audio">
+                  <a href="">Audio</a>
+                  <ul></ul>
+                </li>
+                <li class="furniture">
+                  <a href="">Furniture</a>
                 </li>
               </ul>
-            </li>
-            <li class="audio">
-              <a href="">Audio</a>
-              <ul></ul>
-            </li>
-            <li class="furniture">
-              <a href="">Furniture</a>
-              
-            </li>
-          </ul>
-          </div>
+            </div>
 
-          <div class="column_two">
-            <span>Collections</span>
-            <ul class="total_ul">
-              <li class="same_li">
-                <a href="">Latest Drops</a>
-              </li>
-              <li class="same_li">
-                <a href="">Weekly Picks</a>
-              </li>
-              <li class="same_li">
-                <a href="">Sale</a>
-              </li>
-            </ul>
+            <div class="column_two">
+              <span>Collections</span>
+              <ul class="total_ul">
+                <li class="same_li">
+                  <a href="">Latest Drops</a>
+                </li>
+                <li class="same_li">
+                  <a href="">Weekly Picks</a>
+                </li>
+                <li class="same_li">
+                  <a href="">Sale</a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
         </div>
       </div>
 
       <div class="sign">
-        <p>@by: <a href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWstpsjFmQvPpsNGHmwcDMZSwbcHxgLHXMQNHpFRLwNFwfzmGQnRwFhpZnVBJGjvZjjRGBDCg">NGUYEN VIET TAN</a></p>
+        <p>
+          @by:
+          <a
+            href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWstpsjFmQvPpsNGHmwcDMZSwbcHxgLHXMQNHpFRLwNFwfzmGQnRwFhpZnVBJGjvZjjRGBDCg"
+            >NGUYEN VIET TAN</a
+          >
+        </p>
       </div>
     </div>
   </body>

@@ -4,17 +4,17 @@ const getProductsCategories = async (categories, elementParent) => {
     const data = await res.json();
     if (data) {
       elementParent.innerHTML += `<div class="detail_products">
-            ${data.data.map(
-              (item) => `<div class="introduce_product">
+            ${data.data
+              .map(
+                (item) => `<div class="introduce_product">
               <a href="/product.html?sanpham=${item.title}&_id=${item["_id"]}">
                         <div class="top">
                             <div class="image_product"> 
                                 <img src="${item.image_bg}" alt="${
-                item.title
-              }"/>
+                  item.title
+                }"/>
                             </div>    
                         </div>
-                        
 
                         <div class="information_product">
                             <p>${item.title}</p>
@@ -27,7 +27,8 @@ const getProductsCategories = async (categories, elementParent) => {
                             </div>
                         </div>
                     </div>`
-            ).join('')}
+              )
+              .join("")}
         </div>`;
     }
   } catch (error) {
