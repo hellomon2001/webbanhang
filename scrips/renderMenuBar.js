@@ -1,0 +1,1 @@
+const renderMenuBar = async 

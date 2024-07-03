@@ -32,26 +32,14 @@
             renderMenuBar(
               document
                 .getElementById('toggleButton')
-                .getAttribute("data-category"),
+                .addEventListener("click",  renderMenuBar({
+                  
+                })),
               document.querySelector("#display_content").parentElement
             )
           </script>
 
-          <div class="hidden" id="menu_bar">
-            <div>
-              <div>
-                <button>*</button>
-              </div>
-            </div>
-
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
+          
           <div class="cover_title">
             <a href="/index.html" class="main_title">CLOTHES STORE</a>
           </div>
