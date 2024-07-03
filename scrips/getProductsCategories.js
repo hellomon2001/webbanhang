@@ -15,7 +15,7 @@ const getProductsCategories = async (categories, elementParent) => {
                 }"/>
                             </div>    
                         </div>
-
+ 
                         <div class="information_product">
                             <p>${item.title}</p>
                             <div class="price_product">
