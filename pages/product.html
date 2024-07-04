@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/content.css" />
     <link rel="stylesheet" href="/css/product.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <script src="/scrips/getIDproduct.js"></script>
     <script src="/scrips/renderDetailProduct.js"></script>
   </head>
@@ -17,7 +26,7 @@
       <div class="cover_navbar">
         <div class="navbar">
           <div class="menu">
-            <button>Menu</button>
+            <button id="toggleButton">Menu</button>
           </div>
           <div class="cover_title">
             <a href="/index.html" class="main_title">CLOTHES STORE</a>
@@ -30,6 +39,30 @@
             <div class="hidden_cart">
               <a href="">Cart (0)</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toggleMenu hidden">
+      <div class="contain_menu">
+        <div class="overlay">
+          <div class="boder_menu">
+            <button class="close_menu">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <ul class="menu_list">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="">Store</a></li>
+            <li><a href="">Search</a></li>
+            <li><a href="/account.html">Account</a></li>
+            <li><a href="">Cart</a></li>
+          </ul>
+
+          <div class="bottom_menu">
+            <p>@ 2024 Clothes Store. All rights reserved.</p>
           </div>
         </div>
       </div>
@@ -103,5 +136,7 @@
         </p>
       </div>
     </div>
+
+    <script src="/scrips/renderMenuBar.js"></script>
   </body>
 </html>
