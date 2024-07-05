@@ -187,8 +187,8 @@
 .menu_list {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  /* align-items: flex-start;
+  justify-content: flex-start; */
   gap: 24px;
 }
 
@@ -211,9 +211,35 @@
 
 .bottom_menu p {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   font-weight: 400;
   font-family: var(--font--content--);
   font-size: 13px;
   line-height: 20px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width:min-content;
+  width: 400px;
+  height: 300px;
+  background-color: gray;
+}
+
+.over_cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.over_cart h2 {
+  font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-top: 24px;
+    color: #000000;
+    font-family: var(--font--content--);
 }
