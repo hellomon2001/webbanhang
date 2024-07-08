@@ -67,14 +67,24 @@
       </div>
     </div>
 
-    <div class="cart">
-      <div class="over_cart">
-        <h2>Cart</h2>
-
-        <div class="main_cart">
-          <div></div>
-
-          <a href=""><button>Explore products</button></a>
+    <div class="cart obscure">
+      <div class="overlay_cart">
+        <div class="over_cart">
+          <h3>Cart</h3>
+        </div>
+  
+        <div>
+          <div class="main_cart">
+            <div class="items">
+              <span>0</span>
+            </div>
+            <span>Your shopping bag is empty.</span>
+    
+            <a href=""
+              ><span class="hidden_instruction">Go to all products page</span
+              ><button class="btn_cart">Explore products</button></a
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -170,5 +180,6 @@
     </div>
 
     <script src="/scrips/renderMenuBar.js"></script>
+    <script src="/scrips/renderCart.js"></script>
   </body>
 </html>

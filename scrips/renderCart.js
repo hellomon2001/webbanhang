@@ -1,16 +1,21 @@
 const hidden_cart = document.querySelector(".hidden_cart")
 const cart = document.querySelector(".cart")
+const overlay_cart = document.querySelector(".overlay_cart")
 
 
 hidden_cart.addEventListener("mouseenter", () =>{
-    if (cart.classList.contains("hidden")) {
-        cart.classList.remove("hidden")
-    }
-    else {
-        cart.classList.add("hidden")
-    }
+    cart.classList.remove("obscure");
 })
 
-const hidden = () =>{
-    cart.classList.add("hidden")
+hidden_cart.addEventListener("mouseleave", () =>{
+    cart.classList.add("obscure");
+})
+
+const obscure = () =>{
+    cart.classList.add("obscure")
 }
+// const showCart = () => {
+//     cart.classList.remove("obscure");
+// };
+
+cart.addEventListener("mouseenter", obscure)
