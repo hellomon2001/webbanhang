@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/content.css" />
+    <link rel="stylesheet" href="/css/account.css" />
+    <link rel="stylesheet" href="/css/cart.css" />
 
     <link
       rel="stylesheet"
@@ -19,7 +21,6 @@
 
     <script src="/scrips/getProductsCategories.js"></script>
   </head>
-
   <body>
     <div class="header">
       <div class="cover_navbar">
@@ -36,7 +37,7 @@
               <a class="acc" href="/account.html">Account</a>
             </div>
             <div class="hidden_cart">
-              <a href="/cart.html">Cart (0)</a>
+              <a href="">Cart (0)</a>
             </div>
           </div>
         </div>
@@ -57,7 +58,7 @@
             <li><a href="">Store</a></li>
             <li><a href="">Search</a></li>
             <li><a href="/account.html">Account</a></li>
-            <li><a href="/cart.html">Cart</a></li>
+            <li><a href="">Cart</a></li>
           </ul>
 
           <div class="bottom_menu">
@@ -88,34 +89,7 @@
     </div>
 
     <div class="content">
-      <ul class="content_container">
-        <li>
-          <div class="name_category">
-            <p>Electronics</p>
-            <a href="#"
-              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
-            ></a>
-          </div>
-
-          <script id="display_content" data-category="Electronics">
-            getProductsCategories(
-              document
-                .querySelector("#display_content")
-                .getAttribute("data-category"),
-              document.querySelector("#display_content").parentElement
-            );
-          </script>
-        </li>
-
-        <li>
-          <div class="name_category">
-            <p>Computers</p>
-            <a href="#"
-              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
-            ></a>
-          </div>
-        </li>
-      </ul>
+        <h1>hi</h1>
     </div>
 
     <div class="footer">
