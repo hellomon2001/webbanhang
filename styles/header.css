@@ -330,3 +330,54 @@
 .btn_cart:focus {
   box-shadow: (0 0 #0000, 0 0 #0000, 0px 0.75px 0px 0px hsla(0, 0%, 100%, .2) inset, 0px 1px 2px 0px rgba(3, 7, 18, .4), 0px 0px 0px 1px rgba(3, 7, 18, .8), 0px 0px 0px 2px #fff, 0px 0px 0px 4px rgba(59, 130, 246, .6));
 }
+
+.hidden_search {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  height: fit-content;
+  width: fit-content;
+}
+
+.over_search {
+  width: 100vw;
+  height: 100vh;
+}
+
+.content_search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  column-gap: 8px;
+  padding: 16px;
+  background-color: rgba(3, 7, 18, .5);
+  color: #fff;
+  backdrop-filter: blur(40px);
+  border-radius: 8px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form input {
+  flex: 1 1 0%;
+  line-height: 20px;
+  font-family: var(--font--header--);
+  height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: transparent;
+}
+
+.form input::placeholder {
+  color: #fff;
+  /* background-color: #03071280; */
+}
+
+.form input:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
