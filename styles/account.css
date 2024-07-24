@@ -1,9 +1,9 @@
-.content {
+.content_account {
     padding-top: 48px;
     padding-bottom: 48px;
 }
 
-.content_container {
+.content_container_account {
     display: flex;
     flex-direction: column;
     width: 100%;

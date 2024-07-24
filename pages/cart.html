@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/content.css" />
-    <link rel="stylesheet" href="/css/product.css" />
-    
+    <link rel="stylesheet" href="/css/account.css" />
+    <link rel="stylesheet" href="/css/cart.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -18,8 +19,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <script src="/scrips/getIDproduct.js"></script>
-    <script src="/scrips/renderDetailProduct.js"></script>
+    <script src="/scrips/getProductsCategories.js"></script>
   </head>
   <body>
     <div class="header">
@@ -37,7 +37,7 @@
               <a class="acc" href="/account.html">Account</a>
             </div>
             <div class="hidden_cart">
-              <a href="/cart.html">Cart (0)</a>
+              <a href="">Cart (0)</a>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@
             <li><a href="">Store</a></li>
             <li><a href="">Search</a></li>
             <li><a href="/account.html">Account</a></li>
-            <li><a href="/cart.html">Cart</a></li>
+            <li><a href="">Cart</a></li>
           </ul>
 
           <div class="bottom_menu">
@@ -88,14 +88,28 @@
       </div>
     </div>
 
-    <div class="content_product">
-      <script id="id_product">
-        renderDetailProduct(
-          getIDproduct(),
-          document.querySelector("#id_product").parentElement,
-          document.querySelector("#sanpham")
-        );
-      </script>
+    <div class="content_cart">
+      <div class="content-container_cart">
+        <div>
+          <div class="cover_content">
+            <h1>Cart</h1>
+            <p>
+              You don't have anything in your cart. Let's change that, use the
+              link below to start browsing our products.
+            </p>
+
+            <div>
+              <a class="explore" href=""
+                ><p>
+                  Explore products<i
+                    class="fa-solid fa-arrow-right icon_cart"
+                  ></i>
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="footer">
