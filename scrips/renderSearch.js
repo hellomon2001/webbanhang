@@ -3,20 +3,24 @@ const hidden_search = document.querySelector(".hidden_search")
 const content_search = document.querySelector(".content_search")
 const over_search = document.querySelector(".over_search")
 
+search.addEventListener("click" ,(e) =>{
+    e.preventDefault()
+})
+
 search.addEventListener("click", () =>{
-    if (hidden_search.classList.contains("hidden")) {
-        hidden_search.classList.remove("hidden")
+    if (hidden_search.classList.contains("off")) {
+        hidden_search.classList.remove("off")
     }
     else {
-        hidden_search.classList.add("hidden")
+        hidden_search.classList.add("off")
     }
 })
 
-const hidden = () =>{
-    hidden_search.classList.add("hidden")
+const off = () =>{
+    hidden_search.classList.add("off")
 }
 
-over_search.addEventListener("click", hidden)
+over_search.addEventListener("click", off)
 
 content_search.addEventListener("click", (e) =>{
     e.stopPropagation()
