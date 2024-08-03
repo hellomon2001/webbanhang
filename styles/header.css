@@ -358,6 +358,7 @@
 
 .top_search {
   display: flex;
+  /* position: relative; */
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
