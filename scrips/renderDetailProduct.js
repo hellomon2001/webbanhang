@@ -14,7 +14,8 @@ async function renderDetailProduct(id, elementParent, elementName) {
       } = data.data;
       // const galleryImages = [image_bg, ...imagesDetail];
       const galleryImages = [image_bg];
-      elementParent.innerHTML += `
+      if(elementParent){
+        elementParent.innerHTML += `
                   <div class="product_info">
                       <div class="left_description">
                           <div class="description">
@@ -24,7 +25,7 @@ async function renderDetailProduct(id, elementParent, elementName) {
                           </div>
                       </div>
                            
-                      <div class="center_img>
+                      <div class="center_img">
                         <div class="gallery">                       
                           <div class="cover_img">
                           <div class="boder_img">
@@ -48,7 +49,14 @@ async function renderDetailProduct(id, elementParent, elementName) {
                       </div>
                       </div>
                                   `;
-      elementName.textContent = data.data.title;
+      } else {
+        console.log("Something wrong with elementParent");
+        
+      }
+      if(elementName){
+        elementName.textContent = title;
+      } else return console.log("Something wrong with elementName", elementName);
+      
     }
   } catch (error) {
     console.log("Something wrong with renderDetailProduct!", error);

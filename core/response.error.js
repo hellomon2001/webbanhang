@@ -41,7 +41,6 @@ export class Early_Hints extends ResponseError {
   }
 }
 
-
 export class Multiple_Choice extends ResponseError {
   constructor(
     message = "There may be more than 1 available response!",
@@ -51,8 +50,44 @@ export class Multiple_Choice extends ResponseError {
   }
 }
 
+export class BadRequest extends ResponseError {
+  constructor(message = "Bad Request!", statusCode = 400) {
+    super(message, statusCode);
+  }
+}
+
+export class Unauthorized extends ResponseError {
+  constructor(message = "Unauthorized Access!", statusCode = 401) {
+    super(message, statusCode);
+  }
+}
+
+export class Forbidden extends ResponseError {
+  constructor(
+    message = "Forbidden! You don't have permission to access this resource.",
+    statusCode = 403
+  ) {
+    super(message, statusCode);
+  }
+}
+
 export class NotFound extends ResponseError {
   constructor(message = "ID Not Found!", statusCode = 404) {
+    super(message, statusCode);
+  }
+}
+
+export class NotImplemented extends ResponseError {
+  constructor(message = "Not Implemented!", statusCode = 501) {
+    super(message, statusCode);
+  }
+}
+
+export class ServiceUnavailable extends ResponseError {
+  constructor(
+    message = "Service Unavailable! The server is currently unable to handle the request.",
+    statusCode = 503
+  ) {
     super(message, statusCode);
   }
 }

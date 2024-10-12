@@ -2,7 +2,10 @@ const getProductsCategories = async (categories, elementParent) => {
   try {
     const res = await fetch(`/api/products?category=${categories}`);
     const data = await res.json();
-    if (data) {
+    console.log(data.data); // Kiểm tra nội dung mảng sản phẩm
+    console.log(`Fetching products for category: ${categories}`);
+    
+    if (data && data.data && data.data.length > 0) {
       elementParent.innerHTML += `<div class="detail_products">
             ${data.data
               .map(
@@ -30,8 +33,10 @@ const getProductsCategories = async (categories, elementParent) => {
               )
               .join("")}
         </div>`;
+    } else {
+      elementParent.innerHTML += `<div class="no_products">No products found in this category.</div>`;
     }
   } catch (error) {
-    console.log("Something wrong with getProductsCategories!", error);
+    console.log("Something went wrong with getProductsCategories!", error);
   }
 };

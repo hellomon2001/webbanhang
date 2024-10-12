@@ -89,29 +89,28 @@
 
     <div class="hidden_search off">
       <div class="over_search"></div>
-        <div class="cover_all_search">
-          <div class="top_search">
-            <div class="main_search">
-              <div class="content_search">
-                <form action="">
-                    <div class="form">
-                        <input type="search" placeholder="Search products...">
-                    </div>
-                </form>
+      <div class="cover_all_search">
+        <div class="top_search">
+          <div class="main_search">
+            <div class="content_search">
+              <form action="">
+                <div class="form">
+                  <input type="search" placeholder="Search products..." />
+                </div>
+              </form>
             </div>
 
             <div class="all_products">
-              <script>
-                
-              </script>
-            </div>
+              <script></script>
             </div>
           </div>
         </div>
       </div>
-    
+    </div>
 
     <div class="content">
+      <ul class="content_container"></ul>
+      
       <ul class="content_container">
         <li>
           <div class="name_category">
@@ -138,6 +137,65 @@
               >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
             ></a>
           </div>
+          <script id="display_content" data-category="Computers">
+            getProductsCategories(
+              document
+                .querySelector("#display_content")
+                .getAttribute("data-category"),
+              document.querySelector("#display_content").parentElement
+            );
+          </script>
+        </li>
+
+        <li>
+          <div class="name_category">
+            <p>Home Entertainment</p>
+            <a href="#"
+              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
+            ></a>
+          </div>
+          <script id="display_content" data-category="Home Entertainment">
+            getProductsCategories(
+              document
+                .querySelector("#display_content")
+                .getAttribute("data-category"),
+              document.querySelector("#display_content").parentElement
+            );
+          </script>
+        </li>
+
+        <li>
+          <div class="name_category">
+            <p>Wearables</p>
+            <a href="#"
+              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
+            ></a>
+          </div>
+          <script id="display_content" data-category="Wearables">
+            getProductsCategories(
+              document
+                .querySelector("#display_content")
+                .getAttribute("data-category"),
+              document.querySelector("#display_content").parentElement
+            );
+          </script>
+        </li>
+
+        <li>
+          <div class="name_category">
+            <p>Audio</p>
+            <a href="#"
+              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
+            ></a>
+          </div>
+          <script id="display_content" data-category="Audio">
+            getProductsCategories(
+              document
+                .querySelector("#display_content")
+                .getAttribute("data-category"),
+              document.querySelector("#display_content").parentElement
+            );
+          </script>
         </li>
       </ul>
     </div>
