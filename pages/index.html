@@ -109,94 +109,57 @@
     </div>
 
     <div class="content">
-      <ul class="content_container"></ul>
-      
-      <ul class="content_container">
-        <li>
-          <div class="name_category">
-            <p>Electronics</p>
-            <a href="#"
-              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
-            ></a>
-          </div>
+      <ul class="content_container" id="categories_list">
+        <script>
+          const requestOptions = {
+            method: "GET",
+            redirect: "follow",
+          };
 
-          <script id="display_content" data-category="Electronics">
-            getProductsCategories(
-              document
-                .querySelector("#display_content")
-                .getAttribute("data-category"),
-              document.querySelector("#display_content").parentElement
-            );
-          </script>
-        </li>
+          fetch("http://localhost:5000/api/products/category", requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+              result.data.forEach((item) => {
+                const li = document.createElement("li");
+                li.setAttribute("id", item)
+                li.setAttribute("category", item);
 
-        <li>
-          <div class="name_category">
-            <p>Computers</p>
-            <a href="#"
-              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
-            ></a>
-          </div>
-          <script id="display_content" data-category="Computers">
-            getProductsCategories(
-              document
-                .querySelector("#display_content")
-                .getAttribute("data-category"),
-              document.querySelector("#display_content").parentElement
-            );
-          </script>
-        </li>
+                const divNameCategory = document.createElement("div");
+                divNameCategory.classList.add("name_category");
 
-        <li>
-          <div class="name_category">
-            <p>Home Entertainment</p>
-            <a href="#"
-              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
-            ></a>
-          </div>
-          <script id="display_content" data-category="Home Entertainment">
-            getProductsCategories(
-              document
-                .querySelector("#display_content")
-                .getAttribute("data-category"),
-              document.querySelector("#display_content").parentElement
-            );
-          </script>
-        </li>
+                const p = document.createElement("p");
 
-        <li>
-          <div class="name_category">
-            <p>Wearables</p>
-            <a href="#"
-              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
-            ></a>
-          </div>
-          <script id="display_content" data-category="Wearables">
-            getProductsCategories(
-              document
-                .querySelector("#display_content")
-                .getAttribute("data-category"),
-              document.querySelector("#display_content").parentElement
-            );
-          </script>
-        </li>
+                p.textContent = item;
 
-        <li>
-          <div class="name_category">
-            <p>Audio</p>
-            <a href="#"
-              >View all <i class="fa-solid fa-arrow-right icon-link-to"></i
-            ></a>
-          </div>
-          <script id="display_content" data-category="Audio">
-            getProductsCategories(
-              document
-                .querySelector("#display_content")
-                .getAttribute("data-category"),
-              document.querySelector("#display_content").parentElement
+                const a = document.createElement("a");
+                a.href = "#";
+                a.innerHTML = `View all <i class="fa-solid fa-arrow-right icon-link-to"></i>`;
+
+                divNameCategory.appendChild(p);
+                divNameCategory.appendChild(a);
+
+                li.appendChild(divNameCategory);
+                
+
+                const scriptElement = document.createElement("script");
+                scriptElement.id = `display_content${item.split(` `).join(`-`)}`;
+                
+
+                li.appendChild(scriptElement);
+                
+                scriptElement.textContent = `
+                  getProductsCategories(
+           
+                    document.querySelector("#${`display_content${item.split(` `).join(`-`)}`}").parentElement
+                  );
+                `;
+                document.querySelector("#categories_list").appendChild(li);
+              });
+            })
+            .catch((error) =>
+              console.error("Error fetching categories:", error)
             );
-          </script>
-        </li>
+        </script>
       </ul>
     </div>
 

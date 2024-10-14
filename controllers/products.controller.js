@@ -9,6 +9,9 @@ class Products_controller {
 
   searchProduct = async (req, res, next) =>
     (await Products_service.SearchProducts(req.query.title)).send(res);
+
+  getCategory = async (req, res, next) =>
+    (await Products_service.GetCategory()).send(res);
 }
 
 export default new Products_controller();

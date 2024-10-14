@@ -12,7 +12,7 @@ export class ResponseSuccess {
     this.data = data;
   }
 
-  send(res) {
+  send(res) {  
     return res.status(this.meta.statusCode).json(this);
   }
 }

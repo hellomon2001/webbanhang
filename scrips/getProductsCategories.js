@@ -1,11 +1,13 @@
-const getProductsCategories = async (categories, elementParent) => {
+const getProductsCategories = async (elementParent) => {
+  const categories = elementParent.getAttribute("category");
   try {
     const res = await fetch(`/api/products?category=${categories}`);
     const data = await res.json();
-    console.log(data.data); // Kiểm tra nội dung mảng sản phẩm
-    console.log(`Fetching products for category: ${categories}`);
+    console.log(categories, data);
     
+
     if (data && data.data && data.data.length > 0) {
+
       elementParent.innerHTML += `<div class="detail_products">
             ${data.data
               .map(
