@@ -121,7 +121,7 @@
             .then((result) => {
               result.data.forEach((item) => {
                 const li = document.createElement("li");
-                li.setAttribute("id", item)
+                li.setAttribute("id", item);
                 li.setAttribute("category", item);
 
                 const divNameCategory = document.createElement("div");
@@ -132,25 +132,27 @@
                 p.textContent = item;
 
                 const a = document.createElement("a");
-                a.href = "#";
+                a.href = `/products.html?category=${encodeURIComponent(item)}`;
                 a.innerHTML = `View all <i class="fa-solid fa-arrow-right icon-link-to"></i>`;
 
                 divNameCategory.appendChild(p);
                 divNameCategory.appendChild(a);
 
                 li.appendChild(divNameCategory);
-                
 
                 const scriptElement = document.createElement("script");
-                scriptElement.id = `display_content${item.split(` `).join(`-`)}`;
-                
+                scriptElement.id = `display_content${item
+                  .split(` `)
+                  .join(`-`)}`;
 
                 li.appendChild(scriptElement);
-                
+
                 scriptElement.textContent = `
                   getProductsCategories(
            
-                    document.querySelector("#${`display_content${item.split(` `).join(`-`)}`}").parentElement
+                    document.querySelector("#${`display_content${item
+                      .split(` `)
+                      .join(`-`)}`}").parentElement
                   );
                 `;
                 document.querySelector("#categories_list").appendChild(li);
