@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/", express.static(path.join(__dirname, "pages")));
 app.use("/css", express.static(path.join(__dirname, "styles")));
-app.use("/scrips", express.static(path.join(__dirname, "scrips")))
+app.use("/scripts", express.static(path.join(__dirname, "scripts")));
 
 app.use("/api", indexRouter);
 

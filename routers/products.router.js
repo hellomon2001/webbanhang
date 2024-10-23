@@ -1,6 +1,6 @@
 import { Router } from "express";
 import Products_controller from "../controllers/products.controller.js";
-import { UsagiController } from "../helpers/wrapcontroller.js";
+import { UsagiController } from "../helpers/wrapController.js";
 
 const Products_router = Router();
 const { getAllproducts, getProduct, searchProduct, getCategory } =

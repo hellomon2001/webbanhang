@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs"
 import { BadRequest } from "../core/response.error.js";
 import { ResponseSuccess } from "../core/response.success.js";
-import userModel from "../models/user.model";
+import userModel from "../models/user.model.js";
 
 const generateToken = (object) => {
   return jwt.sign(object, process.env.JWT_SECRET, {
@@ -33,18 +33,22 @@ class AuthService {
     const isPasswordValid = await bcrypt.compare(password, userExist.password);
     if (!isPasswordValid) throw new BadRequest("Invalid password!");
 
-    const { password: _, ...output } = userExist.toObject();
+    const output = Object.keys(userExist.toObject())
+      .filter((item) => !(item === "password"))
+      .reduce((prev, next) => {
+        const obj = userExist.toObject();
+        return { ...prev, [next]: obj[next] };
+      }, {});
     let refreshToken = null;
-    if (isSavedAccount)
-      refreshToken = generateRefreshToken({ id: userExist._id });
-    const token = generateToken({ id: userExist._id });
+    if (isSavedAccount) refreshToken = generateRefreshToken(output);
+    const token = generateToken(output);
 
     return new ResponseSuccess({ ...output, refreshToken, token });
   };
 
   register = async (newUserRegister) => {
-    const { username, password, fullname } = newUserRegister;
-    if (!username || !password || !fullname)
+    const { username, password } = newUserRegister;
+    if (!username || !password)
       throw new BadRequest("Missing required information!");
 
     const userExist = await userModel.findOne({ username });
