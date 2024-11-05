@@ -23,6 +23,7 @@ const generateRefreshToken = (object) => {
 class AuthService {
   login = async (userLogin) => {
     const { username, password, isSavedAccount } = userLogin;
+    console.log(`Login attempt with username: ${username}`);
 
     if (!username || !password)
       throw new BadRequest("Username and password are required!");
