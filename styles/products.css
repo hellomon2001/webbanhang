@@ -35,9 +35,23 @@
 
 .left_products {
     display: flex;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    gap: 3rem;
-    margin-bottom: 2rem;
-    /* padding-left: 1.5rem; */
+    padding-top: 24px;
+    padding-bottom: 24px;
+    gap: 72px;
+    margin-bottom: 48px;
+}
+
+.over_products {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    column-gap: 18px;
+}
+
+.over_products p {
+    font-weight: 400;
+    font-family: var(--font--content--);
+    line-height: 1.25rem;
+    font-size: .8125rem;
+    color: #9ca3af;
 }
