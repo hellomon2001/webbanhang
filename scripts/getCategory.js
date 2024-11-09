@@ -1,90 +1,99 @@
-const params = new URLSearchParams(window.location.search);
-const category = params.get("category");
-const displayContent = document.querySelector("#display_content");
+document.addEventListener("DOMContentLoaded", function () {
+  const displayContent = document.querySelector("#display_content");
+  if (!displayContent) {
+    console.error("Element with ID 'display_content' not found.");
+    return;
+  }
 
-if (!displayContent) {
-  console.error("Element with ID 'display_content' not found.");
-}
+  const urlParams = new URLSearchParams(window.location.search);
+  const category = urlParams.get("category") || "default";
 
-const getProductsByCategory = async (category) => {
-  try {
-    const res = await fetch(`/api/products?category=${category}`);
-    const data = await res.json();
+  const getProductsByCategory = async (category, sortOrder) => {
+    try {
+      const res = await fetch(`/api/products?category=${category}`);
+      const data = await res.json();
 
-    if (displayContent) {
       displayContent.innerHTML = "";
 
       if (data && data.data && data.data.length > 0) {
-        const detailProducts = document.createElement("div");
-        detailProducts.classList.add("detail_products");
-
-        data.data.forEach((item) => {
-          const introduceProduct = document.createElement("div");
-          introduceProduct.classList.add("introduce_product");
-
-          const link = document.createElement("a");
-          link.href = `/product.html?sanpham=${item.title}&_id=${item["_id"]}`;
-
-          const topDiv = document.createElement("div");
-          topDiv.classList.add("top");
-
-          const imageDiv = document.createElement("div");
-          imageDiv.classList.add("image_product");
-
-          const img = document.createElement("img");
-          img.src = item.image_bg;
-          img.alt = item.title;
-
-          imageDiv.appendChild(img);
-          topDiv.appendChild(imageDiv);
-          link.appendChild(topDiv);
-
-          const infoDiv = document.createElement("div");
-          infoDiv.classList.add("information_product");
-
-          const titleP = document.createElement("p");
-          titleP.textContent = item.title;
-
-          const priceDiv = document.createElement("div");
-          priceDiv.classList.add("price_product");
-
-          const originalPrice = document.createElement("span");
-          originalPrice.textContent = `${item.price_origin} đ`;
-
-          const salePrice = document.createElement("p");
-          const finalPrice =
+        const sortedProducts = data.data.sort((a, b) => {
+          const priceA =
             Math.round(
-              (item.price_origin - (item.price_origin / 100) * item.sale) * 100
+              (a.price_origin - (a.price_origin / 100) * a.sale) * 100
             ) / 100;
-          salePrice.textContent = `${finalPrice} đ`;
+          const priceB =
+            Math.round(
+              (b.price_origin - (b.price_origin / 100) * b.sale) * 100
+            ) / 100;
 
-          priceDiv.appendChild(originalPrice);
-          priceDiv.appendChild(salePrice);
-
-          infoDiv.appendChild(titleP);
-          infoDiv.appendChild(priceDiv);
-
-          link.appendChild(infoDiv);
-          introduceProduct.appendChild(link);
-
-          detailProducts.appendChild(introduceProduct);
+          return sortOrder === "lowToHigh" ? priceA - priceB : priceB - priceA;
         });
 
-        displayContent.appendChild(detailProducts);
+        const detailProducts = document.createElement("div");
+detailProducts.classList.add("detail_products");
+
+sortedProducts.forEach((item) => {
+  const productHTML = `
+    <div class="introduce_product">
+      <a href="/product.html?sanpham=${item.title}&_id=${item["_id"]}">
+        <div class="top">
+          <div class="image_product">
+            <img src="${item.image_bg}" alt="${item.title}"/>
+          </div>
+        </div>
+        <div class="information_product">
+          <p>${item.title}</p>
+          <div class="price_product">
+            <span>${item.price_origin} đ</span>
+            <p>
+              ${Math.round(
+                (item.price_origin - (item.price_origin / 100) * item.sale) * 100
+              ) / 100} đ
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  `;
+
+  detailProducts.innerHTML += productHTML;  // Thêm mã HTML vào div chứa sản phẩm
+});
+
+displayContent.appendChild(detailProducts);  // Gắn toàn bộ vào phần tử displayContent
+
       } else {
         const noProducts = document.createElement("div");
         noProducts.classList.add("no_products");
         noProducts.textContent = "No products found in this category.";
         displayContent.appendChild(noProducts);
       }
+    } catch (error) {
+      console.error("Error fetching products: ", error);
     }
-  } catch (error) {
-    console.error("Something went wrong with getProductsByCategory!", error);
-  }
-};
+  };
 
-if (category) {
-  getProductsByCategory(category);
-} else if (displayContent) {
-  displayContent.textContent = "No category selected.";
-}
+  const sortProducts = (order) => {
+    const labels = document.querySelectorAll(".arrange label");
+    labels.forEach((label) => label.classList.remove("active"));
+
+    if (order === "lowToHigh") {
+      const label = document.querySelector("[for='lowToHigh']");
+      label.classList.add("active");
+      getProductsByCategory(category, "lowToHigh");
+    } else if (order === "highToLow") {
+      const label = document.querySelector("[for='highToLow']");
+      label.classList.add("active");
+      getProductsByCategory(category, "highToLow");
+    }
+  };
+
+  document.querySelector("#lowToHigh").onclick = function () {
+    sortProducts("lowToHigh");
+  };
+
+  document.querySelector("#highToLow").onclick = function () {
+    sortProducts("highToLow");
+  };
+
+  getProductsByCategory(category, "lowToHigh");
+});
