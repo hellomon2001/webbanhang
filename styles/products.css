@@ -84,6 +84,14 @@
     color: var(--color--header--);
 }
 
+.arrange button {
+    display: none;
+}
+
+.arrange button .active {
+    color: var(--color--hover--);
+}
+
 .arrange label {
     font-size: 13px !important;
     line-height: 20px !important;

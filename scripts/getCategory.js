@@ -44,11 +44,11 @@ sortedProducts.forEach((item) => {
         <div class="information_product">
           <p>${item.title}</p>
           <div class="price_product">
-            <span>${item.price_origin} đ</span>
+            <span>${item.price_origin} $</span>
             <p>
               ${Math.round(
                 (item.price_origin - (item.price_origin / 100) * item.sale) * 100
-              ) / 100} đ
+              ) / 100} $
             </p>
           </div>
         </div>
@@ -56,10 +56,10 @@ sortedProducts.forEach((item) => {
     </div>
   `;
 
-  detailProducts.innerHTML += productHTML;  // Thêm mã HTML vào div chứa sản phẩm
+  detailProducts.innerHTML += productHTML;  
 });
 
-displayContent.appendChild(detailProducts);  // Gắn toàn bộ vào phần tử displayContent
+displayContent.appendChild(detailProducts);  
 
       } else {
         const noProducts = document.createElement("div");

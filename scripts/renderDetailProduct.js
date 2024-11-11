@@ -39,8 +39,12 @@ async function renderDetailProduct(id, elementParent) {
 
               <div class="right_description">                                
                 <div class="price">
-                  <span>${price_origin} đ</span>
-                  <p>${price_origin - (price_origin / 100) * sale} đ</p>    
+                  <span>${price_origin} $</span>
+                 <p>${
+                   Math.round(
+                     (price_origin - (price_origin / 100) * sale) * 100
+                   ) / 100
+                 } $</p>   
                 </div>               
                 <button class="price_button" type="button">
                   Add to cart

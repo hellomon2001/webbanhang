@@ -21,7 +21,7 @@ const getProductsCategories = async (elementParent) => {
                         <div class="information_product">
                             <p>${item.title}</p>
                             <div class="price_product">
-                                <span>${item.price_origin} đ</span>
+                                <span>${item.price_origin} $</span>
                                 <p>${
                                   Math.round(
                                     (item.price_origin -
@@ -29,7 +29,7 @@ const getProductsCategories = async (elementParent) => {
                                       100
                                   ) / 100
                                 }
- đ</p>      
+ $</p>      
                             </div>
                         </div>
                     </div>`
