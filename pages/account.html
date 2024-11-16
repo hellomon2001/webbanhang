@@ -37,21 +37,22 @@
             </div>
             <div class="hidden_cart">
               <a href="/cart.html">Cart (0)</a>
-              
+
               <div class="cart obscure">
                 <div class="over_cart">
                   <h3>Cart</h3>
                 </div>
-          
+
                 <div>
                   <div class="main_cart">
                     <div class="items">
                       <span>0</span>
                     </div>
                     <span>Your shopping bag is empty.</span>
-          
+
                     <a href=""
-                      ><span class="hidden_instruction">Go to all products page</span
+                      ><span class="hidden_instruction"
+                        >Go to all products page</span
                       ><button class="btn_cart">Explore products</button></a
                     >
                   </div>
@@ -89,7 +90,7 @@
 
     <div class="content_account">
       <div class="content_container_account">
-        <div class="total">
+        <div class="total" style="display: none;">
           <div></div>
           <div class="total_div">
             <div class="overview">
@@ -115,6 +116,7 @@
                   <div class="password">
                     <input
                       class="input_password"
+                      id="input_password"
                       type="password"
                       placeholder=""
                       autocomplete="current-password"
@@ -134,6 +136,78 @@
               <span class="register"
                 >Not a member? <button class="underline">Join us</button>.</span
               >
+            </div>
+          </div>
+        </div>
+
+        <div class="small:py-12 register_hidden">
+          <div class="register_total">
+            <div class="total_register small:grid-cols-[240px_1fr]">
+              <div></div>
+              <div>
+                <div class="wrap_register">
+                  <div class="register_form">
+                    <h1>Become a Clothes Store Member</h1>
+                    <p class="text_register">
+                      Create your Clothes Store Member profile, and get access
+                      to an enhanced shopping experience.
+                    </p>
+
+                    <form class="main_register" action="">
+                      <div class="login">
+                        <div class="email">
+                          <input
+                            class="input_email"
+                            placeholder=""
+                            title="Enter a valid email address."
+                            type="email"
+                            name="email"
+                            autocomplete="email"
+                          />
+                          <label for="input_email"
+                            >Email
+                            <span class="character">*</span>
+                          </label>
+                        </div>
+
+                        <div class="import_password">
+                          <div class="password">
+                            <input
+                              class="input_password"
+                              id="input_password"
+                              type="password"
+                              placeholder=""
+                              autocomplete="current-password"
+                              name="password"
+                            />
+                            <label for="input_password"
+                              >Password
+                              <span class="character">*</span>
+                            </label>
+                            <button type="button">
+                              <i
+                                class="fa-solid fa-eye-slash icon-link-to-acc"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <span class="clause"
+                          >By creating an account, you agree to Clothes Store's
+                          <a class="underline" href="">Privacy Policy</a> and
+                          <a class="underline" href="">Terms of Use</a>.</span
+                        >
+                        <button class="sign_in" type="submit">Join</button>
+                      </div>
+                    </form>
+
+                    <span class="bottom_register"
+                      >Already a member?
+                      <button class="underline">Sign in</button>.
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

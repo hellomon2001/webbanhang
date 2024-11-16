@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs"
+import bcrypt from "bcryptjs";
 import { BadRequest } from "../core/response.error.js";
 import { ResponseSuccess } from "../core/response.success.js";
 import userModel from "../models/user.model.js";
@@ -48,20 +48,37 @@ class AuthService {
   };
 
   register = async (newUserRegister) => {
-    const { username, password } = newUserRegister;
-    if (!username || !password)
-      throw new BadRequest("Missing required information!");
+    try {
+      if (!newUserRegister) {
+        throw new BadRequest("Request body is missing.");
+      }
 
-    const userExist = await userModel.findOne({ username });
-    if (userExist) throw new BadRequest("Account already exists!");
+      const { username, password } = newUserRegister;
 
-    const newUser = new userModel(newUserRegister);
-    await newUser.save();
+      if (!username || !password) {
+        throw new BadRequest("Missing required information!");
+      }
 
-    const { password: _, ...output } = newUser.toObject();
-    const refreshToken = generateRefreshToken({ id: newUser._id });
-    const token = generateToken({ id: newUser._id });
-    return new ResponseSuccess({ ...output, refreshToken, token });
+      const userExist = await userModel.findOne({ username });
+      if (userExist) {
+        throw new BadRequest("Account already exists!");
+      }
+
+      const newUser = new userModel(newUserRegister);
+      await newUser.save();
+      const output = Object.keys(newUser.toObject())
+        .filter((item) => item !== "password")
+        .reduce((acc, key) => {
+          acc[key] = newUser[key];
+          return acc;
+        }, {});
+      const refreshToken = generateRefreshToken(output);
+      const token = generateToken(output);
+
+      return new ResponseSuccess({ ...output, refreshToken, token });
+    } catch (error) {
+      throw error;
+    }
   };
 }
 export default new AuthService();

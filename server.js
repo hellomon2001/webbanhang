@@ -11,6 +11,8 @@ Dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json())
+
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/", express.static(path.join(__dirname, "pages")));
 app.use("/css", express.static(path.join(__dirname, "styles")));
