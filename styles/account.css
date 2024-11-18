@@ -14,6 +14,11 @@
     padding-bottom: 48px;
 }
 
+.content_account,
+.small\:py-12 {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 .content_container_account {
     display: flex;
     flex-direction: column;
@@ -142,6 +147,10 @@
     transform: translate(0, -8px) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
 }
 
+.character {
+    color: rgb(244 63 94 /1);
+}
+
 .import_password {
     display: flex;
     flex-direction: column;
@@ -260,7 +269,7 @@
     box-shadow: 0 0 #0000, 0px 0.75px 0px 0px hsla(0, 0%, 100%, .2) inset, 0px 1px 2px 0px rgba(3, 7, 18, .4), 0px 0px 0px 1px rgba(3, 7, 18, .8);
     color: #fff;
     transition-property: color, background-color, border-color, box-shadow, opacity;
-    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     transition-duration: .15s;
     font-size: 14px;
     font-weight: 500;
@@ -302,10 +311,6 @@
     font-family: var(--font--content--);
 }
 
-/* .register_hidden {
-    display: none;
-} */
-
 .register_total {
     display: flex;
     flex-direction: column;
@@ -335,7 +340,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 384px;  
+    max-width: 384px;
 }
 
 .register_form h1 {
@@ -387,6 +392,7 @@
     line-height: 20px;
     margin-top: 24px;
 }
+
 .bottom {
     display: flex;
     justify-content: space-between;

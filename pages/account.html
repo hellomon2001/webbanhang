@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/content.css" />
+    <link rel="stylesheet" href="/css/account.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="/css/global.css" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/content.css" />
-  <link rel="stylesheet" href="/css/account.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <script src="/scripts/getProductsCategories.js"></script>
-</head>
-
-<body>
-  <div class="header">
-    <div class="cover_navbar">
-      <div class="navbar">
-        <div class="menu">
-          <button id="toggleButton">Menu</button>
-        </div>
-        <div class="cover_title">
-          <a href="/index.html" class="main_title">CLOTHES STORE</a>
-        </div>
-        <div class="right_view">
-          <div class="function">
-            <a class="search" href="">Search</a>
-            <a class="acc" href="/account.html">Account</a>
+    <script src="/scripts/getProductsCategories.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="cover_navbar">
+        <div class="navbar">
+          <div class="menu">
+            <button id="toggleButton">Menu</button>
           </div>
-          <div class="hidden_cart">
-            <a href="/cart.html">Cart (0)</a>
+          <div class="cover_title">
+            <a href="/index.html" class="main_title">CLOTHES STORE</a>
+          </div>
+          <div class="right_view">
+            <div class="function">
+              <a class="search" href="">Search</a>
+              <a class="acc" href="/account.html">Account</a>
+            </div>
+            <div class="hidden_cart">
+              <a href="/cart.html">Cart (0)</a>
 
-            <div class="cart obscure">
-              <div class="over_cart">
-                <h3>Cart</h3>
-              </div>
+              <div class="cart obscure">
+                <div class="over_cart">
+                  <h3>Cart</h3>
+                </div>
 
-              <div>
-                <div class="main_cart">
-                  <div class="items">
-                    <span>0</span>
+                <div>
+                  <div class="main_cart">
+                    <div class="items">
+                      <span>0</span>
+                    </div>
+                    <span>Your shopping bag is empty.</span>
+
+                    <a href=""
+                      ><span class="hidden_instruction"
+                        >Go to all products page</span
+                      ><button class="btn_cart">Explore products</button></a
+                    >
                   </div>
-                  <span>Your shopping bag is empty.</span>
-
-                  <a href=""><span class="hidden_instruction">Go to all products page</span><button
-                      class="btn_cart">Explore products</button></a>
                 </div>
               </div>
             </div>
@@ -57,35 +63,34 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="toggleMenu hidden">
-    <div class="contain_menu">
-      <div class="overlay">
-        <div class="boder_menu">
-          <button class="close_menu">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
+    <div class="toggleMenu hidden">
+      <div class="contain_menu">
+        <div class="overlay">
+          <div class="boder_menu">
+            <button class="close_menu">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
 
-        <ul class="menu_list">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="">Store</a></li>
-          <li><a href="">Search</a></li>
-          <li><a href="/account.html">Account</a></li>
-          <li><a href="/cart.html">Cart</a></li>
-        </ul>
+          <ul class="menu_list">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="">Store</a></li>
+            <li><a href="">Search</a></li>
+            <li><a href="/account.html">Account</a></li>
+            <li><a href="/cart.html">Cart</a></li>
+          </ul>
 
-        <div class="bottom_menu">
-          <p>@ 2024 Clothes Store. All rights reserved.</p>
+          <div class="bottom_menu">
+            <p>@ 2024 Clothes Store. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="content_account">
-    <div class="content_container_account">
-       <div class="total">
+    <div class="content_account" id="sign_in_section">
+      <div class="content_container_account">
+        <div class="total">
           <div></div>
           <div class="total_div">
             <div class="overview">
@@ -103,7 +108,7 @@
                   />
                   <label for="input_email"
                     >Email
-                    <span>*</span>
+                    <span class="character">*</span>
                   </label>
                 </div>
 
@@ -111,7 +116,7 @@
                   <div class="password">
                     <input
                       class="input_password"
-                      id="input_password"
+                      id="input_password_1"
                       type="password"
                       placeholder=""
                       autocomplete="current-password"
@@ -119,154 +124,207 @@
                     />
                     <label for="input_password"
                       >Password
-                      <span>*</span>
+                      <span class="character">*</span>
                     </label>
-                    <button type="button">
-                      <i class="fa-solid fa-eye-slash icon-link-to-acc"></i>
+                    <button
+                      type="button"
+                      onclick="togglePassword('input_password_1', 'toggleIcon_1')"
+                    >
+                      <i
+                        class="fa-solid fa-eye-slash icon-link-to-acc"
+                        id="toggleIcon_1"
+                      ></i>
                     </button>
                   </div>
                 </div>
                 <button class="sign_in" type="submit">Sign in</button>
               </div>
               <span class="register"
-                >Not a member? <button class="underline">Join us</button>.</span
+                >Not a member?
+                <button class="underline" onclick="showRegister()">
+                  Join us</button
+                >.</span
               >
             </div>
           </div>
-        </div> 
+        </div>
 
-      <div class="small:py-12 register_hidden">
-        <div class="register_total">
-          <div class="total_register small:grid-cols-[240px_1fr]">
-            <div></div>
-            <div>
-              <div class="wrap_register">
-                <div class="register_form">
-                  <h1>Become a Clothes Store Member</h1>
-                  <p class="text_register">
-                    Create your Clothes Store Member profile, and get access
-                    to an enhanced shopping experience.
-                  </p>
+        <div class="bottom">
+          <div>
+            <h3 class="title_bottom">Got questions?</h3>
+            <span class="span_bottom"
+              >You can find frequently asked questions and answers on our
+              customer service page.</span
+            >
+          </div>
 
-                  <form class="main_register" action="">
-                    <div class="login">
-                      <div class="email">
-                        <input class="input_email" placeholder="" title="Enter a valid email address." type="email"
-                          name="email" autocomplete="email" />
-                        <label for="input_email">Email
+          <div>
+            <a class="service" href=""
+              ><p>
+                Customer Service
+                <i class="fa-solid fa-arrow-right icon-link-to"></i></p
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="small:py-12" id="register_section">
+      <div class="register_total">
+        <div class="total_register small:grid-cols-[240px_1fr]">
+          <div></div>
+          <div>
+            <div class="wrap_register">
+              <div class="register_form">
+                <h1>Become a Clothes Store Member</h1>
+                <p class="text_register">
+                  Create your Clothes Store Member profile, and get access to an
+                  enhanced shopping experience.
+                </p>
+
+                <form class="main_register" action="">
+                  <div class="login">
+                    <div class="email">
+                      <input
+                        class="input_email"
+                        placeholder=""
+                        title="Enter a valid email address."
+                        type="email"
+                        name="email"
+                        autocomplete="email"
+                      />
+                      <label for="input_email"
+                        >Email
+                        <span class="character">*</span>
+                      </label>
+                    </div>
+
+                    <div class="import_password">
+                      <div class="password">
+                        <input
+                          class="input_password"
+                          id="input_password_2"
+                          type="password"
+                          placeholder=""
+                          autocomplete="current-password"
+                          name="password"
+                        />
+                        <label for="input_password"
+                          >Password
                           <span class="character">*</span>
                         </label>
+                        <button
+                          type="button"
+                          onclick="togglePassword('input_password_2', 'toggleIcon_2')"
+                        >
+                          <i
+                            class="fa-solid fa-eye-slash icon-link-to-acc"
+                            id="toggleIcon_2"
+                          ></i>
+                        </button>
                       </div>
-
-                      <div class="import_password">
-                        <div class="password">
-                          <input class="input_password" id="input_password" type="password" placeholder=""
-                            autocomplete="current-password" name="password" />
-                          <label for="input_password">Password
-                            <span class="character">*</span>
-                          </label>
-                          <button type="button">
-                            <i class="fa-solid fa-eye-slash icon-link-to-acc"></i>
-                          </button>
-                        </div>
-                      </div>
-
-                      <span class="clause">By creating an account, you agree to Clothes Store's
-                        <a class="underline" href="">Privacy Policy</a> and
-                        <a class="underline" href="">Terms of Use</a>.</span>
-                      <button class="sign_in" type="submit">Join</button>
                     </div>
-                  </form>
 
-                  <span class="bottom_register">Already a member?
-                    <button class="underline">Sign in</button>.
-                  </span>
-                </div>
+                    <span class="clause"
+                      >By creating an account, you agree to Clothes Store's
+                      <a class="underline" href="">Privacy Policy</a> and
+                      <a class="underline" href="">Terms of Use</a>.</span
+                    >
+                    <button class="sign_in" type="submit">Join</button>
+                  </div>
+                </form>
+
+                <span class="bottom_register"
+                  >Already a member?
+                  <button class="underline" onclick="showSignIn()">
+                    Sign in</button
+                  >.
+                </span>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="bottom">
-        <div>
-          <h3 class="title_bottom">Got questions?</h3>
-          <span class="span_bottom">You can find frequently asked questions and answers on our
-            customer service page.</span>
-        </div>
-
-        <div>
-          <a class="service" href="">
-            <p>
-              Customer Service
-              <i class="fa-solid fa-arrow-right icon-link-to"></i>
-            </p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <div class="footer_container">
-      <div class="footer_inside">
-        <a href="index.html" class="left">CLOTHES STORE</a>
-
-        <div class="right">
-          <div class="column_one">
-            <span>Categories</span>
-            <ul class="total_ul">
-              <li class="same_li">
-                <a href="">Clothing</a>
-                <ul class="detail_ul">
-                  <li>
-                    <a href="">Hoodies</a>
-                  </li>
-                  <li>
-                    <a href="">Accessories</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="audio">
-                <a href="">Audio</a>
-                <ul></ul>
-              </li>
-              <li class="furniture">
-                <a href="">Furniture</a>
-              </li>
-            </ul>
+        <div class="bottom">
+          <div>
+            <h3 class="title_bottom">Got questions?</h3>
+            <span class="span_bottom"
+              >You can find frequently asked questions and answers on our
+              customer service page.</span
+            >
           </div>
 
-          <div class="column_two">
-            <span>Collections</span>
-            <ul class="total_ul">
-              <li class="same_li">
-                <a href="">Latest Drops</a>
-              </li>
-              <li class="same_li">
-                <a href="">Weekly Picks</a>
-              </li>
-              <li class="same_li">
-                <a href="">Sale</a>
-              </li>
-            </ul>
+          <div>
+            <a class="service" href=""
+              ><p>
+                Customer Service
+                <i class="fa-solid fa-arrow-right icon-link-to"></i></p
+            ></a>
           </div>
         </div>
       </div>
     </div>
+    <script src="/scripts/toggleCart.js"></script>
+    <div class="footer">
+      <div class="footer_container">
+        <div class="footer_inside">
+          <a href="index.html" class="left">CLOTHES STORE</a>
 
-    <div class="sign">
-      <p>
-        @by:
-        <a
-          href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWstpsjFmQvPpsNGHmwcDMZSwbcHxgLHXMQNHpFRLwNFwfzmGQnRwFhpZnVBJGjvZjjRGBDCg">NGUYEN
-          VIET TAN</a>
-      </p>
+          <div class="right">
+            <div class="column_one">
+              <span>Categories</span>
+              <ul class="total_ul">
+                <li class="same_li">
+                  <a href="">Clothing</a>
+                  <ul class="detail_ul">
+                    <li>
+                      <a href="">Hoodies</a>
+                    </li>
+                    <li>
+                      <a href="">Accessories</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="audio">
+                  <a href="">Audio</a>
+                  <ul></ul>
+                </li>
+                <li class="furniture">
+                  <a href="">Furniture</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="column_two">
+              <span>Collections</span>
+              <ul class="total_ul">
+                <li class="same_li">
+                  <a href="">Latest Drops</a>
+                </li>
+                <li class="same_li">
+                  <a href="">Weekly Picks</a>
+                </li>
+                <li class="same_li">
+                  <a href="">Sale</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sign">
+        <p>
+          @by:
+          <a
+            href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWstpsjFmQvPpsNGHmwcDMZSwbcHxgLHXMQNHpFRLwNFwfzmGQnRwFhpZnVBJGjvZjjRGBDCg"
+            >NGUYEN VIET TAN</a
+          >
+        </p>
+      </div>
     </div>
-  </div>
 
-  <script src="/scripts/renderMenuBar.js"></script>
-  <script src="/scripts/renderCart.js"></script>
-</body>
-
+    <script src="/scripts/renderMenuBar.js"></script>
+    <script src="/scripts/renderCart.js"></script>
+  </body>
 </html>
