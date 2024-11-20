@@ -96,15 +96,17 @@
             <div class="overview">
               <h1>WELCOME BACK</h1>
               <p>Sign in to access an enhanced shopping experience.</p>
-              <div class="login">
+              <form id="loginForm" class="login">
                 <div class="email">
                   <input
                     class="input_email"
+                    required
                     placeholder=""
                     title="Enter a valid email address."
                     type="email"
-                    name="email"
+                    name="username"
                     autocomplete="email"
+                    id="username"
                   />
                   <label for="input_email"
                     >Email
@@ -121,6 +123,7 @@
                       placeholder=""
                       autocomplete="current-password"
                       name="password"
+                      required
                     />
                     <label for="input_password"
                       >Password
@@ -128,7 +131,9 @@
                     </label>
                     <button
                       type="button"
-                      onclick="togglePassword('input_password_1', 'toggleIcon_1')"
+                      class="toggle-password"
+                      data-target="input_password_1"
+                      data-icon="toggleIcon_1"
                     >
                       <i
                         class="fa-solid fa-eye-slash icon-link-to-acc"
@@ -138,11 +143,10 @@
                   </div>
                 </div>
                 <button class="sign_in" type="submit">Sign in</button>
-              </div>
+              </form>
               <span class="register"
                 >Not a member?
-                <button class="underline" onclick="showRegister()">
-                  Join us</button
+                <button id="joinUsButton" class="underline">Join us</button
                 >.</span
               >
             </div>
@@ -182,18 +186,20 @@
                   enhanced shopping experience.
                 </p>
 
-                <form class="main_register" action="">
+                <form id="registerForm" class="main_register" action="">
                   <div class="login">
                     <div class="email">
                       <input
                         class="input_email"
+                        required
                         placeholder=""
                         title="Enter a valid email address."
                         type="email"
-                        name="email"
+                        name="username"
                         autocomplete="email"
+                        id="reg_email"
                       />
-                      <label for="input_email"
+                      <label for="reg_email"
                         >Email
                         <span class="character">*</span>
                       </label>
@@ -208,6 +214,7 @@
                           placeholder=""
                           autocomplete="current-password"
                           name="password"
+                          required
                         />
                         <label for="input_password"
                           >Password
@@ -215,7 +222,9 @@
                         </label>
                         <button
                           type="button"
-                          onclick="togglePassword('input_password_2', 'toggleIcon_2')"
+                          class="toggle-password"
+                          data-target="input_password_2"
+                          data-icon="toggleIcon_2"
                         >
                           <i
                             class="fa-solid fa-eye-slash icon-link-to-acc"
@@ -236,9 +245,7 @@
 
                 <span class="bottom_register"
                   >Already a member?
-                  <button class="underline" onclick="showSignIn()">
-                    Sign in</button
-                  >.
+                  <button id="signInButton" class="underline">Sign in</button>.
                 </span>
               </div>
             </div>
@@ -264,7 +271,7 @@
         </div>
       </div>
     </div>
-    <script src="/scripts/toggleCart.js"></script>
+
     <div class="footer">
       <div class="footer_container">
         <div class="footer_inside">
@@ -326,5 +333,6 @@
 
     <script src="/scripts/renderMenuBar.js"></script>
     <script src="/scripts/renderCart.js"></script>
+    <script type="module" src="/scripts/authUser.js"></script>
   </body>
 </html>
