@@ -33,7 +33,6 @@
 
 .total {
     display: grid;
-    grid-template-columns: 240px 1fr;
     padding-top: 48px;
     padding-bottom: 48px;
 }

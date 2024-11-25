@@ -46,7 +46,12 @@ async function renderDetailProduct(id, elementParent) {
                    ) / 100
                  } $</p>   
                 </div>               
-                <button class="price_button" type="button">
+                <button class="price_button" type="button data-id="${id}" 
+  data-title="${title}" 
+  data-price="${price_origin}" 
+  data-sale="${
+    Math.round((price_origin - (price_origin / 100) * sale) * 100) / 100
+  }">">
                   Add to cart
                 </button>
               </div>

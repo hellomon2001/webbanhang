@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/content.css" />
+    <link rel="stylesheet" href="/css/account.css" />
+    <link rel="stylesheet" href="/css/welcome.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="/scripts/getProductsCategories.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="cover_navbar">
+        <div class="navbar">
+          <div class="menu">
+            <button id="toggleButton">Menu</button>
+          </div>
+          <div class="cover_title">
+            <a href="/index.html" class="main_title">CLOTHES STORE</a>
+          </div>
+          <div class="right_view">
+            <div class="function">
+              <a class="search" href="">Search</a>
+              <a class="acc" href="/account.html">Account</a>
+            </div>
+            <div class="hidden_cart">
+              <a href="/cart.html">Cart (0)</a>
+
+              <div class="cart obscure">
+                <div class="over_cart">
+                  <h3>Cart</h3>
+                </div>
+
+                <div>
+                  <div class="main_cart">
+                    <div class="items">
+                      <span>0</span>
+                    </div>
+                    <span>Your shopping bag is empty.</span>
+
+                    <a href=""
+                      ><span class="hidden_instruction"
+                        >Go to all products page</span
+                      ><button class="btn_cart">Explore products</button></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toggleMenu hidden">
+      <div class="contain_menu">
+        <div class="overlay">
+          <div class="boder_menu">
+            <button class="close_menu">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <ul class="menu_list">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="">Store</a></li>
+            <li><a href="">Search</a></li>
+            <li><a href="/account.html">Account</a></li>
+            <li><a href="/cart.html">Cart</a></li>
+          </ul>
+
+          <div class="bottom_menu">
+            <p>@ 2024 Clothes Store. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="small\:py-12">
+      <div class="register_total">
+        <div class="total_register small:grid-cols-[240px_1fr]">
+          <div>
+            <div class="small:hidden">
+              <div class="hello">Hello</div>
+
+              <div class="list_welcome">
+                <ul>
+                  <li>
+                    <a href="" class="detail_welcome">
+                      <div class="detail_li">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="custom_span">Profile</span>
+                      </div>
+                      <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="" class="detail_welcome">
+                      <div class="detail_li">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="custom_span">Addresses</span>
+                      </div>
+                      <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="detail_welcome">
+                      <div class="detail_li">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="custom_span">Orders</span>
+                      </div>
+                      <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/account.html" class="detail_welcome">
+                      <div class="detail_li">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="custom_span">Log out</span>
+                      </div>
+                      <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="small:block reponsive_welcome">
+              <div>
+                <div class="left_welcome">
+                  <h3>Account</h3>
+                </div>
+                <div class="overview_left">
+                  <ul class="ul_left">
+                    <li>
+                      <a class="detail_overview" href="/welcome.html"
+                        >Overview</a
+                      >
+                    </li>
+                    <li>
+                      <a class="detail_left" href="">Profile</a>
+                    </li>
+                    <li>
+                      <a class="detail_left" href="">Addresses</a>
+                    </li>
+                    <li>
+                      <a class="orders" href="">Orders</a>
+                    </li>
+                    <li class="log_out">
+                      <button type="button">Log out</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <div class="small:block reponsive_welcome">
+                <div class="header_welcome">
+                  <span> Hello </span>
+                  <span class="signedin"
+                    >Signed in as:
+                    <span>@gmail.com</span>
+                  </span>
+                </div>
+
+                <div class="content_welcome">
+                  <div class="main_welcome">
+                    <div class="top_welcome">
+                      <div class="completed_profile">
+                        <h3>Profile</h3>
+                        <div class="percent_completed">
+                          <span class="top_span">50%</span>
+                          <span class="top_note">Completed</span>
+                        </div>
+                      </div>
+
+                      <div class="completed_profile">
+                        <h3>Addresses</h3>
+                        <div class="percent_completed">
+                          <span class="top_span">0</span>
+                          <span class="top_note">Saved</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="bot_welcome">
+                      <div class="orders">
+                        <h3>Recent orders</h3>
+                      </div>
+
+                      <ul class="bot_welcome">
+                        <li>
+                          <a href="">
+                            <div class="bottom_li">
+                              <div class="detail_orders">
+                                <span class="title_orders">Date placed</span>
+                                <span class="title_orders">Order number</span>
+                                <span class="title_orders">Total amount</span>
+                                <span>Thu Jun 20 2024</span>
+                                <span>#5253</span>
+                                <span>764.00$</span>
+                              </div>
+                              <button class="btn_bot">
+                                <span>Go to order #5253</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                              </button>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div>
+            <h3 class="title_bottom">Got questions?</h3>
+            <span class="span_bottom"
+              >You can find frequently asked questions and answers on our
+              customer service page.</span
+            >
+          </div>
+
+          <div>
+            <a class="service" href=""
+              ><p>
+                Customer Service
+                <i class="fa-solid fa-arrow-right icon-link-to"></i></p
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer_container">
+        <div class="footer_inside">
+          <a href="index.html" class="left">CLOTHES STORE</a>
+
+          <div class="right">
+            <div class="column_one">
+              <span>Categories</span>
+              <ul class="total_ul">
+                <li class="same_li">
+                  <a href="">Clothing</a>
+                  <ul class="detail_ul">
+                    <li>
+                      <a href="">Hoodies</a>
+                    </li>
+                    <li>
+                      <a href="">Accessories</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="audio">
+                  <a href="">Audio</a>
+                  <ul></ul>
+                </li>
+                <li class="furniture">
+                  <a href="">Furniture</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="column_two">
+              <span>Collections</span>
+              <ul class="total_ul">
+                <li class="same_li">
+                  <a href="">Latest Drops</a>
+                </li>
+                <li class="same_li">
+                  <a href="">Weekly Picks</a>
+                </li>
+                <li class="same_li">
+                  <a href="">Sale</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sign">
+        <p>
+          @by:
+          <a
+            href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWstpsjFmQvPpsNGHmwcDMZSwbcHxgLHXMQNHpFRLwNFwfzmGQnRwFhpZnVBJGjvZjjRGBDCg"
+            >NGUYEN VIET TAN</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <script src="/scripts/renderMenuBar.js"></script>
+    <script src="/scripts/renderCart.js"></script>
+  </body>
+</html>
