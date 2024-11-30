@@ -346,10 +346,12 @@ select {
     color: #9ca3af;
 }
 
-.price_cartproducts span {
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 400;
+.price_cartproducts p span {
+    text-decoration-line: line-through;
+}
+
+.price_sale {
+    color: #3b82f6;
 }
 
 .totalprice_td {
@@ -373,10 +375,9 @@ select {
     text-align: left;
 }
 
-.text_left span {
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 400;
+.text_left p span {
+    text-decoration-line: line-through;
+    color: #9ca3af;
 }
 
 .right_cartproducts {
@@ -589,6 +590,23 @@ select {
 .line_cartproducts {
     height: 1px;
     width: 100%;
-    margin-top: .25rem;
+    margin-top: 4px;
     border-bottom: rgb(229 231 235 /1) solid 1px;
+}
+
+.top_pay {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    font-weight: 400;
+    font-family: var(--font--header--);
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color--header--);
+}
+
+.subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
