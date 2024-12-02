@@ -138,3 +138,11 @@ function addToCart(product) {
     renderCart(); // Gọi lại hàm renderCart sau khi xóa sản phẩm
   }
   
+
+
+
+
+
+
+
+ 

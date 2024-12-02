@@ -580,6 +580,7 @@ select {
 }
 
 .err_span {
+    display: none;
     padding-top: 8px;
     color: rgb(244 63 94 /1);
     font-size: 12px;
@@ -609,4 +610,49 @@ select {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.span_left_cart {
+    display: flex;
+    column-gap: 4px;
+    align-items: center;
+}
+
+.taxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line_bot_cartproducts {
+    height: 1px;
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-bottom: rgb(229 231 235 /1) solid 1px;
+}
+
+.total_price_cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color--hover--);
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-family:var(--font--header--);
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.total_money {
+    font-size: 18px;
+    line-height: 32px;
+    font-family:var(--font--header--);
+    font-weight: 500; 
+}
+
+.lastline_bot_cartproducts {
+    height: 1px;
+    width: 100%;
+    margin-top: 16px;
+    border-bottom: rgb(229 231 235 /1) solid 1px;
 }

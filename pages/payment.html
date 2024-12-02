@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/content.css" />
+    <link rel="stylesheet" href="/css/account.css" />
+    <link rel="stylesheet" href="/css/cart.css" />
+    <link rel="stylesheet" href="/css/payment.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="/scripts/getProductsCategories.js"></script>
+  </head>
+
+  <body>
+    <main class="main_payment">
+      <div class="body_payment">
+
+        <div class="header_payment">
+          <nav class="nav_header">
+            <a class="btn_backtocart" href="/cart.html">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="backtocart">Back to shopping cart</span>
+              <span class="btn_back">Back</span>
+            </a>
+
+            <a class="btn_index" href="/index.html">CLOTHES STORE</a>
+            <div class="right_blank"></div>
+          </nav>
+        </div>
+
+        <div class="content_payment">
+          <div class="total_payment">
+            <div>
+              <div>
+                <div class="left_payment">
+                  <div class="form_shipping">
+                    <div class="shipping_address">
+                      <h2 class="text_shipping">Shipping Address</h2>
+                    </div>
+                    <form action="" enctype="multipart/form-data" method="POST">
+                      <input type="hidden" />
+                      <input type="hidden" />
+                      <input type="hidden" />
+                      <input type="hidden" />
+                      <div class="main_form">
+                        <div class="top_form_payment">
+                          <div class="form1">
+                            <div class="email">
+                              <input required placeholder="" type="text" />
+                              <label for="input_email"
+                                >First name
+                                <span class="character">*</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form1">
+                            <div class="email">
+                              <input required placeholder="" type="text" />
+                              <label for="input_email"
+                                >Last name
+                                <span class="character">*</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form1">
+                            <div class="email">
+                              <input required placeholder="" type="text" />
+                              <label for="input_email"
+                                >Address
+                                <span class="character">*</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form1">
+                            <div class="email">
+                              <input required placeholder="" type="text" />
+                              <label for="input_email"
+                                >City
+                                <span class="character">*</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form1">
+                            <div class="email">
+                              <input required placeholder="" type="text" />
+                              <label for="input_email"
+                                >First name
+                                <span class="character">*</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form1">
+                            <div class="email">
+                              <input required placeholder="" type="text" />
+                              <label for="input_email"
+                                >First name
+                                <span class="character">*</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div>
+                            <div class="select_country">
+                              <select name="" autocomplete="country" required>
+                                <option value="" disabled>Country</option>
+                                <option value="us" selected>United States</option>
+                                <option value="vn" selected>Viet Nam</option>
+                                <option value="ca">Canada</option>
+                              </select>
+                              <span>
+                                <i class="fa-solid fa-up-down"></i>
+                              </span>
+                            </div>
+                          </div>
+
+                          <div class="form1">
+                            <div class="email">
+                              <input required placeholder="" type="text" />
+                              <label for="input_email"
+                                >First name
+                                <span class="character">*</span>
+                              </label>
+                            </div>
+                          </div>                
+                        </div>
+
+                        <div class="bottom_form">
+                          <div class="form1">
+                            <div class="email">
+                              <input required placeholder="" type="text" />
+                              <label for="input_email"
+                                >First name
+                                <span class="character">*</span>
+                              </label>
+                            </div>
+                          </div>         
+
+                          <div class="form1">
+                            <div class="email">
+                              <input required placeholder="" type="text" autocomplete="email"/>
+                              <label for="input_email"
+                                >First name
+                                <span class="character">*</span>
+                              </label>
+                            </div>
+                          </div>   
+                        </div>
+
+                        <button id="continueToDelivery" class="sign_in">Continue to delivery</button>
+                      </div>
+                    </form>
+                    <div class="line_bot_cartproducts"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="right_payment">
+            <div class="pay_payment">
+              <div class="hidden_blank"></div>
+              <h2>In your Cart</h2>
+              <div class="line_payment"></div>
+              <div>
+                <div class="top_pay">
+                  <div class="subtotal">
+                    <span class="span_left_cart"
+                      >Subtotal
+                      <i
+                        title="Cart total excluding shipping and taxes."
+                        class="fa-solid fa-circle-info info_icon"
+                      ></i>
+                    </span>
+                    <span>$405.00</span>
+                  </div>
+                  <div class="subtotal">
+                    <span>Shipping</span>
+                    <span>$0.00</span>
+                  </div>
+                  <div class="taxes">
+                    <span class="span_left_cart">Taxes</span>
+                    <span>$0.00</span>
+                  </div>
+                </div>
+
+                <div class="line_bot_cartproducts"></div>
+
+                <div class="total_price_cart">
+                  <span>Total</span>
+                  <span class="total_money">$405.00</span>
+                </div>
+
+                <div class="lastline_bot_cartproducts"></div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+         <div class="footer">
+          <div class="footer_container">
+            <div class="footer_inside">
+              <a href="/index.html" class="left">CLOTHES STORE</a>
+
+              <div class="right">
+                <div class="column_one">
+                  <span>Categories</span>
+                  <ul class="total_ul">
+                    <li class="same_li">
+                      <a href="">Clothing</a>
+                      <ul class="detail_ul">
+                        <li>
+                          <a href="">Hoodies</a>
+                        </li>
+                        <li>
+                          <a href="">Accessories</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="audio">
+                      <a href="">Audio</a>
+                      <ul></ul>
+                    </li>
+                    <li class="furniture">
+                      <a href="">Furniture</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="column_two">
+                  <span>Collections</span>
+                  <ul class="total_ul">
+                    <li class="same_li">
+                      <a href="">Latest Drops</a>
+                    </li>
+                    <li class="same_li">
+                      <a href="">Weekly Picks</a>
+                    </li>
+                    <li class="same_li">
+                      <a href="">Sale</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sign">
+            <p>
+              @by:
+              <a
+                href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWstpsjFmQvPpsNGHmwcDMZSwbcHxgLHXMQNHpFRLwNFwfzmGQnRwFhpZnVBJGjvZjjRGBDCg"
+                >NGUYEN VIET TAN</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/scripts/renderMenuBar.js"></script>
+    <script src="/scripts/renderCart.js"></script>
+    <script src="/scripts/handlePayment.js"></script>
+  </body>
+</html>

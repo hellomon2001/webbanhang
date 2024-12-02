@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/content.css" />
+    <link rel="stylesheet" href="/css/account.css" />
+    <link rel="stylesheet" href="/css/cart.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="/css/global.css" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/content.css" />
-  <link rel="stylesheet" href="/css/account.css" />
-  <link rel="stylesheet" href="/css/cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/scripts/getProductsCategories.js"></script>
+  </head>
 
-  <script src="/scripts/getProductsCategories.js"></script>
-</head>
-
-<body>
-  <div class="header">
-    <div class="cover_navbar">
-      <div class="navbar">
-        <div class="menu">
-          <button id="toggleButton">Menu</button>
-        </div>
-        <div class="cover_title">
-          <a href="/index.html" class="main_title">CLOTHES STORE</a>
-        </div>
-        <div class="right_view">
-          <div class="function">
-            <a class="search" href="">Search</a>
-            <a class="acc" href="/account.html">Account</a>
+  <body>
+    <div class="header">
+      <div class="cover_navbar">
+        <div class="navbar">
+          <div class="menu">
+            <button id="toggleButton">Menu</button>
           </div>
-          <div class="hidden_cart">
-            <a href="">Cart (0)</a>
+          <div class="cover_title">
+            <a href="/index.html" class="main_title">CLOTHES STORE</a>
+          </div>
+          <div class="right_view">
+            <div class="function">
+              <a class="search" href="">Search</a>
+              <a class="acc" href="/account.html">Account</a>
+            </div>
+            <div class="hidden_cart">
+              <a href="">Cart (0)</a>
 
-            <div class="cart obscure">
-              <div class="over_cart">
-                <h3>Cart</h3>
-              </div>
+              <div class="cart obscure">
+                <div class="over_cart">
+                  <h3>Cart</h3>
+                </div>
 
-              <div>
-                <div class="main_cart">
-                  <div class="items">
-                    <span>0</span>
+                <div>
+                  <div class="main_cart">
+                    <div class="items">
+                      <span>0</span>
+                    </div>
+                    <span>Your shopping bag is empty.</span>
+
+                    <a href=""
+                      ><span class="hidden_instruction"
+                        >Go to all products page</span
+                      ><button class="btn_cart">Explore products</button></a
+                    >
                   </div>
-                  <span>Your shopping bag is empty.</span>
-
-                  <a href=""><span class="hidden_instruction">Go to all products page</span><button
-                      class="btn_cart">Explore products</button></a>
                 </div>
               </div>
             </div>
@@ -58,33 +65,32 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="toggleMenu hidden">
-    <div class="contain_menu">
-      <div class="overlay">
-        <div class="boder_menu">
-          <button class="close_menu">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
+    <div class="toggleMenu hidden">
+      <div class="contain_menu">
+        <div class="overlay">
+          <div class="boder_menu">
+            <button class="close_menu">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
 
-        <ul class="menu_list">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="">Store</a></li>
-          <li><a href="">Search</a></li>
-          <li><a href="/account.html">Account</a></li>
-          <li><a href="">Cart</a></li>
-        </ul>
+          <ul class="menu_list">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="">Store</a></li>
+            <li><a href="">Search</a></li>
+            <li><a href="/account.html">Account</a></li>
+            <li><a href="">Cart</a></li>
+          </ul>
 
-        <div class="bottom_menu">
-          <p>@ 2024 Clothes Store. All rights reserved.</p>
+          <div class="bottom_menu">
+            <p>@ 2024 Clothes Store. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- <div class="content_cart">
+    <!-- <div class="content_cart">
       <div class="content-container_cart">
         <div>
           <div class="cover_content">
@@ -108,131 +114,170 @@
       </div>
     </div> -->
 
-  <div class="content_cart_products">
-    <div class="content-container_cart">
-      <div class="small:grid-cols-[1fr_360px] main_cartproducts">
-        <div class="left_cartproducts">
-          <div>
-            <div class="cart_title">
-              <h1>Cart</h1>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th class="item_th">Item</th>
-                  <th class="quantity_th"></th>
-                  <th class="quantity_th">Quantity</th>
-                  <th class="price_th small:table-cell">Price</th>
-                  <th class="total_th">Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="img_td">
-                    <a href="">
-                      <div class="img_cart">
-                        <img src="" alt="" />
-                      </div>
-                    </a>
-                  </td>
-                  <td class="name_td">
-                    <p>Pinnacle Posh Pack</p>
-                  </td>
-                  <td class="quantity_td">
-                    <div class="total_quantity">
-                      <div class="trash_btn">
-                        <button>
-                          <i class="fa-regular fa-trash-can"></i>
-                          <span></span>
-                        </button>
-                      </div>
-                      <div>
-                        <span class="quantity_span">
-                          <select name="" id="">
-                            <option disabled value="">Select...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
-                          <span class="icon_select">
-                            <i class="fa-solid fa-angle-down"></i>
+    <div class="content_cart_products">
+      <div class="content-container_cart">
+        <div class="small:grid-cols-[1fr_360px] main_cartproducts">
+          <div class="left_cartproducts">
+            <div>
+              <div class="cart_title">
+                <h1>Cart</h1>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="item_th">Item</th>
+                    <th class="quantity_th"></th>
+                    <th class="quantity_th">Quantity</th>
+                    <th class="price_th small:table-cell">Price</th>
+                    <th class="total_th">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="img_td">
+                      <a href="">
+                        <div class="img_cart">
+                          <img src="" alt="" />
+                        </div>
+                      </a>
+                    </td>
+                    <td class="name_td">
+                      <p>Pinnacle Posh Pack</p>
+                    </td>
+                    <td class="quantity_td">
+                      <div class="total_quantity">
+                        <div class="trash_btn">
+                          <button>
+                            <i class="fa-regular fa-trash-can"></i>
+                            <span></span>
+                          </button>
+                        </div>
+                        <div>
+                          <span class="quantity_span">
+                            <select name="" id="">
+                              <option disabled value="">Select...</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                            </select>
+                            <span class="icon_select">
+                              <i class="fa-solid fa-angle-down"></i>
+                            </span>
                           </span>
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="price_td small:table-cell">
-                    <div class="price_cartproducts">
-                      <p><span>$600.00</span></p>
-                      <span class="price_sale">$550.00</span>
-                    </div>
-                  </td>
-                  <td class="totalprice_td">
-                    <span>
-                      <div class="totalprice_cartproducts">
-                        <div class="text_left">
-                          <p><span>$600.00</span></p>
-                          <span class="price_sale">$550.00</span>
                         </div>
                       </div>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="right_cartproducts">
-          <div class="pay">
-            <div class="total_pay">
-              <div class="main_pay">
-                <h2>Summary</h2>
-                <div class="giftcode">
-                  <div class="form_giftcode">
-                    <form action="" method="POST" enctype="multipart/form-data">
-                      <input type="hidden" />
-                      <input type="hidden" />
-                      <input type="hidden" />
-                      <input type="hidden" />
-                      <label for="">
-                        <button type="button">
-                          Add gift card or discount code
-                        </button>
-                        <i title="You can add multiple gift cards, 
-but only one discount code." class="fa-solid fa-circle-info info_icon"></i>
-                      </label>
-                      <div class="input_code">
-                        <div class="enter_code">
-                          <div class="form_importcode">
-                            <input type="text" name="code">
-                            <label for="code">Please enter code</label>
+                    </td>
+                    <td class="price_td small:table-cell">
+                      <div class="price_cartproducts">
+                        <p><span>$600.00</span></p>
+                        <span class="price_sale">$550.00</span>
+                      </div>
+                    </td>
+                    <td class="totalprice_td">
+                      <span>
+                        <div class="totalprice_cartproducts">
+                          <div class="text_left">
+                            <p><span>$600.00</span></p>
+                            <span class="price_sale">$550.00</span>
                           </div>
                         </div>
-                        <button class="apply_btn" type="submit">Apply</button>
-                      </div>
-                      <div class="err_span">
-                        <span>Error: Gift card with code: k614579534 was not found.</span>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-                <div class="line_cartproducts"></div>
-
-                <div>
-                  <div class="top_pay">
-                    <div class="subtotal">
-                      <span></span>
+          <div class="right_cartproducts">
+            <div class="pay">
+              <div class="total_pay">
+                <div class="main_pay">
+                  <h2>Summary</h2>
+                  <div class="giftcode">
+                    <div class="form_giftcode">
+                      <form id="discountForm"
+                        action=""
+                        method="POST"
+                        enctype="multipart/form-data"
+                      >
+                        <input type="hidden" />
+                        <input type="hidden" />
+                        <input type="hidden" />
+                        <input type="hidden" />
+                        <label for="discountCode">
+                          <button type="button" onclick="toggleGiftCodeInput()">
+                            Add gift card or discount code
+                          </button>
+                          <i
+                            title="You can add multiple gift cards, 
+but only one discount code."
+                            class="fa-solid fa-circle-info info_icon"
+                          ></i>
+                        </label>
+                        <div class="input_code" id="discountCodeSection">
+                          <div class="enter_code">
+                            <div class="form_importcode">
+                              <input id="discountCode" type="text" name="code" />
+                              <label for="code">Please enter code</label>
+                            </div>
+                          </div>
+                          <button class="apply_btn" type="submit">Apply</button>
+                        </div>
+                        <div class="err_span" id="errorSpan">
+                          <span
+                            >Error: Gift card with code: k614579534 was not
+                            found.</span
+                          >
+                        </div>
+                      </form>
                     </div>
                   </div>
+
+                  <div class="line_cartproducts"></div>
+
+                  <div>
+                    <div class="top_pay">
+                      <div class="subtotal">
+                        <span class="span_left_cart"
+                          >Subtotal
+                          <i
+                            title="Cart total excluding shipping and taxes."
+                            class="fa-solid fa-circle-info info_icon"
+                          ></i>
+                        </span>
+                        <span id="subtotalAmount">$405.00</span>
+                      </div>
+                      <div class="subtotal">
+                        <span>Shipping</span>
+                        <span>$0.00</span>
+                      </div>
+                      <div class="taxes">
+                        <span class="span_left_cart">Taxes</span>
+                        <span>$0.00</span>
+                      </div>
+                    </div>
+
+                    <div class="line_bot_cartproducts"></div>
+
+                    <div class="total_price_cart">
+                      <span>Total</span>
+                      <span id="totalAmount" class="total_money">$405.00</span>
+                    </div>
+
+                    <div class="lastline_bot_cartproducts"></div>
+                  </div>
+
+                  <a href="/payment.html">
+                    <button class="sign_in">Go to checkout</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -240,68 +285,68 @@ but only one discount code." class="fa-solid fa-circle-info info_icon"></i>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="footer">
-    <div class="footer_container">
-      <div class="footer_inside">
-        <a href="/index.html" class="left">CLOTHES STORE</a>
+    <div class="footer">
+      <div class="footer_container">
+        <div class="footer_inside">
+          <a href="/index.html" class="left">CLOTHES STORE</a>
 
-        <div class="right">
-          <div class="column_one">
-            <span>Categories</span>
-            <ul class="total_ul">
-              <li class="same_li">
-                <a href="">Clothing</a>
-                <ul class="detail_ul">
-                  <li>
-                    <a href="">Hoodies</a>
-                  </li>
-                  <li>
-                    <a href="">Accessories</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="audio">
-                <a href="">Audio</a>
-                <ul></ul>
-              </li>
-              <li class="furniture">
-                <a href="">Furniture</a>
-              </li>
-            </ul>
-          </div>
+          <div class="right">
+            <div class="column_one">
+              <span>Categories</span>
+              <ul class="total_ul">
+                <li class="same_li">
+                  <a href="">Clothing</a>
+                  <ul class="detail_ul">
+                    <li>
+                      <a href="">Hoodies</a>
+                    </li>
+                    <li>
+                      <a href="">Accessories</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="audio">
+                  <a href="">Audio</a>
+                  <ul></ul>
+                </li>
+                <li class="furniture">
+                  <a href="">Furniture</a>
+                </li>
+              </ul>
+            </div>
 
-          <div class="column_two">
-            <span>Collections</span>
-            <ul class="total_ul">
-              <li class="same_li">
-                <a href="">Latest Drops</a>
-              </li>
-              <li class="same_li">
-                <a href="">Weekly Picks</a>
-              </li>
-              <li class="same_li">
-                <a href="">Sale</a>
-              </li>
-            </ul>
+            <div class="column_two">
+              <span>Collections</span>
+              <ul class="total_ul">
+                <li class="same_li">
+                  <a href="">Latest Drops</a>
+                </li>
+                <li class="same_li">
+                  <a href="">Weekly Picks</a>
+                </li>
+                <li class="same_li">
+                  <a href="">Sale</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="sign">
+        <p>
+          @by:
+          <a
+            href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWstpsjFmQvPpsNGHmwcDMZSwbcHxgLHXMQNHpFRLwNFwfzmGQnRwFhpZnVBJGjvZjjRGBDCg"
+            >NGUYEN VIET TAN</a
+          >
+        </p>
+      </div>
     </div>
 
-    <div class="sign">
-      <p>
-        @by:
-        <a
-          href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWstpsjFmQvPpsNGHmwcDMZSwbcHxgLHXMQNHpFRLwNFwfzmGQnRwFhpZnVBJGjvZjjRGBDCg">NGUYEN
-          VIET TAN</a>
-      </p>
-    </div>
-  </div>
-
-  <script src="/scripts/renderMenuBar.js"></script>
-  <script src="/scripts/renderCart.js"></script>
-</body>
-
+    <script src="/scripts/renderMenuBar.js"></script>
+    <script src="/scripts/renderCart.js"></script>
+    <script src="/scripts/addToCart.js"></script>
+  </body>
 </html>
