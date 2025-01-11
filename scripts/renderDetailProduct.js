@@ -1,28 +1,21 @@
 async function renderDetailProduct(id, elementParent) {
-  // Hàm thêm sản phẩm vào giỏ hàng
   function addToCart(product) {
-    // Lấy giỏ hàng từ Local Storage hoặc khởi tạo mảng rỗng
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Kiểm tra sản phẩm đã tồn tại trong giỏ hàng chưa
     const existingProduct = cart.find(item => item.id === product.id);
     if (existingProduct) {
-      // Nếu đã tồn tại, tăng số lượng
       existingProduct.quantity += 1;
     } else {
-      // Nếu chưa, thêm sản phẩm mới với số lượng = 1
       product.quantity = 1;
       cart.push(product);
     }
 
-    // Lưu giỏ hàng vào Local Storage
     localStorage.setItem("cart", JSON.stringify(cart));
 
     alert("Product added to cart!");
   }
 
   try {
-    // Gửi request để lấy dữ liệu sản phẩm từ MongoDB
     const res = await fetch(`/api/products/${id}`);
     const data = await res.json();
 
@@ -39,7 +32,6 @@ async function renderDetailProduct(id, elementParent) {
       const galleryImages = [image_bg];
 
       if (elementParent) {
-        // Render chi tiết sản phẩm vào giao diện
         elementParent.innerHTML += `
           <div class="product_info">
             <div class="left_description">
@@ -79,7 +71,6 @@ async function renderDetailProduct(id, elementParent) {
           </div>
         `;
 
-        // Gắn sự kiện cho nút "Add to cart"
         const addToCartButton = elementParent.querySelector('.price_button');
         addToCartButton.addEventListener('click', function () {
           const product = {
@@ -87,10 +78,10 @@ async function renderDetailProduct(id, elementParent) {
             title: title,
             price: price_origin,
             sale: Math.round((price_origin - (price_origin / 100) * sale) * 100) / 100,
-            image: image_bg // Nếu cần hiển thị hình ảnh trong giỏ hàng
+            image: image_bg 
           };
 
-          addToCart(product); // Gọi hàm thêm vào giỏ hàng
+          addToCart(product); 
         });
 
       } else {

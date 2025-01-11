@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Lấy giỏ hàng từ LocalStorage
     const shoppingCart = JSON.parse(localStorage.getItem("cart")) || [];
   
-    // Lấy tbody để hiển thị giỏ hàng
     const shoppingCartTableBody = document.querySelector("tbody");
   
     if (!shoppingCartTableBody) {
@@ -10,24 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Lấy các phần tử cần cập nhật
     const subtotalElement = document.getElementById('subtotalAmount');
     const totalElement = document.getElementById('totalAmount');
     const errorSpan = document.getElementById('errorSpan');
   
-    // Hàm tính tổng tiền giỏ hàng
     function calculateTotal() {
         let subtotal = 0;
         shoppingCart.forEach(product => {
             subtotal += product.sale * product.quantity;
         });
-        // Cập nhật subtotal
         subtotalElement.innerText = `$${subtotal.toFixed(2)}`;
         totalElement.innerText = `$${subtotal.toFixed(2)}`;
         return subtotal;
     }
 
-    // Hàm hiển thị giỏ hàng
     function displayShoppingCart() {
       shoppingCartTableBody.innerHTML = "";
 
@@ -75,41 +69,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         shoppingCartTableBody.innerHTML += row;
       });
-      // Tính lại tổng tiền sau khi hiển thị giỏ hàng
       calculateTotal();
     }
 
-    // Lắng nghe sự kiện thay đổi số lượng
     shoppingCartTableBody.addEventListener("change", function (e) {
       if (e.target.tagName.toLowerCase() === "select") {
         const index = e.target.getAttribute("data-index");
         const newQuantity = parseInt(e.target.value);
 
-        // Cập nhật số lượng sản phẩm trong giỏ hàng
         shoppingCart[index].quantity = newQuantity;
 
-        // Cập nhật lại giỏ hàng trong LocalStorage
         localStorage.setItem("cart", JSON.stringify(shoppingCart));
 
-        // Cập nhật lại giỏ hàng trên giao diện
         displayShoppingCart();
       }
     });
 
-    // Xử lý mã giảm giá
     document.getElementById('discountForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Ngăn không cho form gửi đi
+      e.preventDefault(); 
 
       const discountCode = document.getElementById('discountCode').value;
-
-      // Kiểm tra mã giảm giá
       const subtotal = calculateTotal();
       if (discountCode === "DISCOUNT10") {
-        // Giảm giá 10%
         const discountAmount = subtotal * 0.1;
         const newTotal = subtotal - discountAmount;
 
-        // Cập nhật giá trị
         subtotalElement.innerText = `$${(subtotal - discountAmount).toFixed(2)}`;
         totalElement.innerText = `$${newTotal.toFixed(2)}`;
         errorSpan.style.display = 'none';
@@ -118,6 +102,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Hiển thị giỏ hàng
     displayShoppingCart();
 });

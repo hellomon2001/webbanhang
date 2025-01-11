@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/content.css" />
+    <link rel="stylesheet" href="/css/account.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="/scripts/getProductsCategories.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="cover_navbar">
+            <div class="navbar">
+                <div class="menu">
+                    <button id="toggleButton">Menu</button>
+                </div>
+                <div class="cover_title">
+                    <a href="/index.html" class="main_title">CLOTHES STORE</a>
+                </div>
+                <div class="right_view">
+                    <div class="function">
+                        <a class="search" href="">Search</a>
+                        <a class="acc" href="/account.html">Account</a>
+                    </div>
+                    <div class="hidden_cart">
+                        <a href="/cart.html">Cart (0)</a>
+
+                        <div class="cart obscure">
+                            <div class="over_cart">
+                                <h3>Cart</h3>
+                            </div>
+
+                            <div>
+                                <div class="main_cart">
+                                    <div class="items">
+                                        <span>0</span>
+                                    </div>
+                                    <span>Your shopping bag is empty.</span>
+
+                                    <a href=""><span class="hidden_instruction">Go to all products page</span><button
+                                            class="btn_cart">Explore products</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toggleMenu hidden">
+        <div class="contain_menu">
+            <div class="overlay">
+                <div class="boder_menu">
+                    <button class="close_menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <ul class="menu_list">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="">Store</a></li>
+                    <li><a href="">Search</a></li>
+                    <li><a href="/account.html">Account</a></li>
+                    <li><a href="/cart.html">Cart</a></li>
+                </ul>
+
+                <div class="bottom_menu">
+                    <p>@ 2024 Clothes Store. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content_account small:py-12" id="sign_in_section">
+        <div class="content_container_account">
+            <div class="total small:grid-cols-[240px_1fr]">
+                <div></div>
+                <div class="total_div">
+                    <div class="overview">
+                        <h1>WELCOME BACK</h1>
+                        <p>Sign in to manage your shop.</p>
+                        <form id="loginForm" class="login">
+                            <div class="email">
+                                <input class="input_email" required placeholder="" title="Enter a valid email address."
+                                    type="email" name="username" autocomplete="email" id="username" />
+                                <label for="input_email">Email
+                                    <span class="character">*</span>
+                                </label>
+                            </div>
+
+                            <div class="import_password">
+                                <div class="password">
+                                    <input class="input_password" id="input_password_1" type="password" placeholder=""
+                                        autocomplete="current-password" name="password" required />
+                                    <label for="input_password">Password
+                                        <span class="character">*</span>
+                                    </label>
+                                    <button type="button" class="toggle-password" data-target="input_password_1"
+                                        data-icon="toggleIcon_1">
+                                        <i class="fa-solid fa-eye-slash icon-link-to-acc" id="toggleIcon_1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="sign_in" type="submit">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="footer_container">
+            <div class="footer_inside">
+                <a href="index.html" class="left">CLOTHES STORE</a>
+
+                <div class="right">
+                    <div class="column_one">
+                        <span>Categories</span>
+                        <ul class="total_ul">
+                            <li class="same_li">
+                                <a href="">Clothing</a>
+                                <ul class="detail_ul">
+                                    <li>
+                                        <a href="">Hoodies</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Accessories</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="audio">
+                                <a href="">Audio</a>
+                                <ul></ul>
+                            </li>
+                            <li class="furniture">
+                                <a href="">Furniture</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="column_two">
+                        <span>Collections</span>
+                        <ul class="total_ul">
+                            <li class="same_li">
+                                <a href="">Latest Drops</a>
+                            </li>
+                            <li class="same_li">
+                                <a href="">Weekly Picks</a>
+                            </li>
+                            <li class="same_li">
+                                <a href="">Sale</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sign">
+            <p>
+                @by:
+                <a
+                    href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWstpsjFmQvPpsNGHmwcDMZSwbcHxgLHXMQNHpFRLwNFwfzmGQnRwFhpZnVBJGjvZjjRGBDCg">NGUYEN
+                    VIET TAN</a>
+            </p>
+        </div>
+    </div>
+    <script src="/scripts/renderMenuBar.js"></script>
+    <script src="/scripts/renderCart.js"></script>
+    <script type="module" src="/scripts/authUser.js"></script>
+</body>
+
+</html>

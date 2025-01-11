@@ -22,26 +22,20 @@ cart.addEventListener("mouseleave", obscure);
 function addToCart(product) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
   
-    // Kiểm tra sản phẩm đã có trong giỏ hàng chưa
     const existingProductIndex = cart.findIndex(item => item.id === product.id);
   
     if (existingProductIndex !== -1) {
-      // Nếu có rồi, cập nhật số lượng
       cart[existingProductIndex].quantity += 1;
     } else {
-      // Nếu chưa có, thêm sản phẩm mới vào giỏ hàng
       product.quantity = 1;
       cart.push(product);
     }
   
-    // Lưu lại giỏ hàng vào localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
   
-    // Gọi lại hàm renderCart để cập nhật giao diện
     renderCart();
   }
   
-  // Hàm renderCart để hiển thị giỏ hàng
   function renderCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContainer = document.querySelector('.cart');
@@ -66,7 +60,6 @@ function addToCart(product) {
       return;
     }
   
-    // Khởi tạo một string để chứa toàn bộ HTML của giỏ hàng
     let cartContent = '';
   
     cart.forEach(product => {
@@ -126,16 +119,14 @@ function addToCart(product) {
       `;
     });
   
-    // Gán toàn bộ HTML vào phần tử cartContainer
     cartContainer.innerHTML = cartContent;
   }
   
-  // Hàm removeFromCart để xóa sản phẩm khỏi giỏ hàng
   function removeFromCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart = cart.filter(product => product.id !== productId);
     localStorage.setItem('cart', JSON.stringify(cart));
-    renderCart(); // Gọi lại hàm renderCart sau khi xóa sản phẩm
+    renderCart(); 
   }
   
 
