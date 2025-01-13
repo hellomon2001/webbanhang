@@ -99,7 +99,9 @@ function addToCart(product) {
                 <div class="remove_cart_bot">
                   <button onclick="removeFromCart(${product.id})">
                     <i class="fa-regular fa-trash-can" id="icon_remove"></i>
-                    <span class="remove_span" data-id="${product.id}">Remove</span>
+                    <span class="remove_span" data-id="${
+                      product.id
+                    }">Remove</span>
                   </button>
                 </div>
               </div>
@@ -109,7 +111,9 @@ function addToCart(product) {
           <div class="bottom_cart">
             <div class="top_bottom_cart">
               <span>Subtotal <span style="font-weight: 400">(excl. taxes)</span></span>
-              <span class="price_bottom_cart">${(product.price * product.quantity).toFixed(2)}</span>
+              <span class="price_bottom_cart">${(
+                product.price * product.quantity
+              ).toFixed(2)}</span>
             </div>
             <a href="/cart.html">
               <button class="go_to_cart">Go to cart</button>

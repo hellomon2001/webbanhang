@@ -4,14 +4,27 @@ import { fileURLToPath } from "url";
 import path, { dirname } from "path";
 import { indexRouter } from "./routers/index.router.js";
 import connectMongodb from "./data/connectDB.js";
+import AdminBro from "admin-bro";
+import mongoose from "mongoose";
+import AdminBroMongoose from 'admin-bro-mongoose';
+import AdminBroExpress from 'admin-bro-expressjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 Dotenv.config();
+
+AdminBro.registerAdapter(AdminBroMongoose)
+
+const adminBro = new AdminBro({
+  databases: [mongoose],
+  rootPath: '/admin'
+})
+const router = AdminBroExpress.buildRouter(adminBro);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
+app.use(adminBro.options.rootPath, router)
 
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/", express.static(path.join(__dirname, "pages")));

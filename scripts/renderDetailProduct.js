@@ -33,42 +33,66 @@ async function renderDetailProduct(id, elementParent) {
 
       if (elementParent) {
         elementParent.innerHTML += `
-          <div class="product_info">
-            <div class="left_description">
-              <div class="description">
-                <a href="/index.html">${category}</a>
-                <h2 class="title_product">${title}</h2>
-                <p>${description_product}</p>
-              </div>
-            </div>
+           <div class="left_description">
+        <div class="product_info">
+          <div class="description">
+            <a href="/products.html?category=${encodeURIComponent(category)}"
+              >${category}</a
+            >
+            <h2 class="title_product">${title}</h2>
+            <p>${description_product}</p>
+          </div>
+        </div>
 
-            <div class="center_img">
-              <div class="gallery">
-                <div class="cover_img">
-                  <div class="boder_img">
-                    ${galleryImages.map((item) => `<img id="select" src="${item}" />`).join("")}
-                  </div>
-                </div>
-              </div>
+        <div class="blank_div"></div>
+      </div>
 
-              <div class="right_description">
-                <div class="price">
-                  <span>${price_origin} $</span>
-                  <p>${Math.round((price_origin - (price_origin / 100) * sale) * 100) / 100} $</p>
-                </div>
-                <button
-                  class="price_button"
-                  type="button"
-                  data-id="${id}"
-                  data-title="${title}"
-                  data-price="${price_origin}"
-                  data-sale="${Math.round((price_origin - (price_origin / 100) * sale) * 100) / 100}"
-                >
-                  Add to cart
-                </button>
-              </div>
+      <div class="center_img">
+        <div class="center_product">
+          <div class="gallery">
+            <div class="cover_img">
+              ${galleryImages
+                .map(
+                  (item) => `<img
+                id="select"
+                src="${item}"
+              />`
+                )
+                .join("")}
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="right_description">
+        <div class="price">
+          <div>
+            <div class="nouse_div"></div>
+          </div>
+          <div class="span_price_product">
+            <span>${price_origin} $</span>
+          </div>
+          <p>
+            ${
+              Math.round((price_origin - (price_origin / 100) * sale) * 100) /
+              100
+            } $
+          </p>
+        </div>
+
+        <button
+          class="price_button"
+          type="button"
+          data-id="${id}"
+          data-title="${title}"
+          data-price="${price_origin}"
+          data-sale="${
+            Math.round((price_origin - (price_origin / 100) * sale) * 100) / 100
+          }"
+        >
+          Add to cart
+        </button>
+      </div>
         `;
 
         const addToCartButton = elementParent.querySelector('.price_button');
@@ -83,7 +107,6 @@ async function renderDetailProduct(id, elementParent) {
 
           addToCart(product); 
         });
-
       } else {
         console.log("Something wrong with elementParent");
       }

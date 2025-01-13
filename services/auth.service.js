@@ -25,6 +25,10 @@ class AuthService {
     const { username, password, isSavedAccount } = userLogin;
     console.log(`Login attempt with username: ${username}`);
 
+    if (username.toLowerCase().includes("admin")) {
+      throw new BadRequest("Username cannot contain the word 'admin'. Please choose a different username.");
+    }
+
     if (!username || !password)
       throw new BadRequest("Username and password are required!");
 
