@@ -16,8 +16,20 @@ AdminBro.registerAdapter(AdminBroMongoose)
 
 const adminBro = new AdminBro({
   databases: [mongoose],
-  rootPath: '/admin'
-})
+  rootPath: "/admin",
+  resources: [
+    {
+      resource: mongoose.model("products"),
+      options: {
+        properties: {
+          createdAt: { isVisible: { list: true, edit: false, filter: true, show: true } },
+          updatedAt: { isVisible: { list: true, edit: false, filter: true, show: true } },
+        },
+      },
+    },
+  ],
+});
+
 const router = AdminBroExpress.buildRouter(adminBro);
 
 const app = express();
