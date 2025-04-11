@@ -1,48 +1,16 @@
-// import { Router } from "express";
-// import AdminService from "../services/admin.service.js"; 
+import express from "express";
+import { verifyToken } from "../middlewares/auth.js";
+import { authorizeRoles } from "../middlewares/authorization.js";
 
-// const adminRouter = Router();
-// const { router, authenticateJWT } = AdminService.buildAdminRouter();
+const adminRoutes = express.Router();
 
-// adminRouter.use("/admin", authenticateJWT);
-// adminRouter.use(AdminService.adminBro.options.rootPath, router);
-
-// export default adminRouter;
-
-
-
-
-
-import { Router } from "express";
-import AdminService from "../services/admin.service.js";
-import path from "path";
-
-const adminRouter = Router();
-const adminRouterInstance = AdminService.buildAdminRouter();
-
-// Định tuyến cho trang đăng nhập Admin
-adminRouter.get("/admin.html", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "pages", "admin.html"));
-});
-
-// Bảo vệ đường dẫn Admin bằng cách kiểm tra token
-adminRouter.use("/admin", (req, res, next) => {
-  const token = req.cookies?.authToken || req.headers["authorization"]?.split(" ")[1];
-
-  if (!token) {
-    return res.redirect("/admin.html");
+adminRoutes.get(
+  "/admin-only",
+  verifyToken, 
+  authorizeRoles("admin"),
+  (req, res) => {
+    res.json({ message: "Welcome admin!" });
   }
+);
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-    if (err) {
-      return res.redirect("/admin.html");
-    }
-    req.user = user;
-    next();
-  });
-});
-
-// Sử dụng router của AdminBro
-adminRouter.use(AdminService.adminBro.options.rootPath, adminRouterInstance);
-
-export default adminRouter;
+export default adminRoutes;

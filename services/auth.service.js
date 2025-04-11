@@ -25,10 +25,6 @@ class AuthService {
     const { username, password, isSavedAccount } = userLogin;
     console.log(`Login attempt with username: ${username}`);
 
-    if (username.toLowerCase().includes("admin")) {
-      throw new BadRequest("Username cannot contain the word 'admin'. Please choose a different username.");
-    }
-
     if (!username || !password)
       throw new BadRequest("Username and password are required!");
 
@@ -83,6 +79,12 @@ class AuthService {
     } catch (error) {
       throw error;
     }
+  };
+  
+  getCurrentUser = async (id) => {
+    const user = await userModel.findById(id).select("-password");
+    if (!user) throw new BadRequest("User not found!");
+    return user;
   };
 }
 export default new AuthService();
