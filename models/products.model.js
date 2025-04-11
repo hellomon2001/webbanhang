@@ -22,13 +22,13 @@ const productsSchema = mongoose.Schema(
       required: true,
     },
     description_product: {
-      type: String     
+      type: String,
     },
-    imagesDetail: [],   
+    imagesDetail: { type: [String], default: [] },
   },
   {
     timestamps: true,
   }
 );
 
-export const productsModel = mongoose.model("products",productsSchema)
+export const productsModel = mongoose.model("products", productsSchema);

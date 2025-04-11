@@ -4,7 +4,6 @@ import { fileURLToPath } from "url";
 import path, { dirname } from "path";
 import { indexRouter } from "./routers/index.router.js";
 import connectMongodb from "./data/connectDB.js";
-import { adminBro, adminRouter } from "./config/admin.config.js";
 import adminRoutes from "./routers/admin.router.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -14,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(adminBro.options.rootPath, adminRouter);
+
 
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/", express.static(path.join(__dirname, "pages")));
