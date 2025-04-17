@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("token", result.data.token);
         const role = result.data.role;
         if (role === "admin") {
-          window.location.href = "/admin";
+          window.location.href = "/admin.html";
         } else {
           window.location.href = "/welcome.html";
         }

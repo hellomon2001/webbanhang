@@ -21,7 +21,7 @@ app.use("/css", express.static(path.join(__dirname, "styles")));
 app.use("/scripts", express.static(path.join(__dirname, "scripts")));
 
 app.use("/api", indexRouter);
-app.use("/api", adminRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
