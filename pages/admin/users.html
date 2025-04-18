@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý người dùng - Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <h2>Admin Panel</h2>
+        </div>
+        <ul class="menu">
+          <li>
+            <a href="/admin.html">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/admin/products.html">
+              <i class="fas fa-box"></i>
+              <span>Quản lý sản phẩm</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="/admin/orders.html">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Quản lý đơn hàng</span>
+            </a>
+          </li>
+
+          <li class="active">
+            <a href="/admin/users.html">
+              <i class="fas fa-users"></i>
+              <span>Quản lý người dùng</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="/admin/categories.html">
+              <i class="fas fa-tags"></i>
+              <span>Quản lý danh mục</span>
+            </a>
+          </li>
+          <li>
+            <a href="/" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Đăng xuất</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+          <div class="search">
+            <input type="text" placeholder="Tìm kiếm..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="user-info">
+            <span id="admin-username">Admin</span>
+            <img src="" alt="Admin Avatar" />
+          </div>
+        </div>
+
+        <!-- Users Management Content -->
+        <div class="content">
+          <div class="section-header">
+            <h1>Quản lý người dùng</h1>
+            <button onclick="showAddUserModal()" class="btn-add">
+              <i class="fas fa-plus"></i>
+              Thêm người dùng
+            </button>
+          </div>
+
+          <!-- Filters -->
+          <div class="filters">
+            <div class="search-box">
+              <input type="text" id="user-search" placeholder="Tìm kiếm người dùng...">
+            </div>
+            <div class="role-filter">
+              <select id="role-select">
+                <option value="">Tất cả vai trò</option>
+                <option value="admin">Quản trị viên</option>
+                <option value="user">Người dùng</option>
+              </select>
+            </div>
+            <div class="status-filter">
+              <select id="status-select">
+                <option value="">Tất cả trạng thái</option>
+                <option value="active">Đang hoạt động</option>
+                <option value="inactive">Đã khóa</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Users Table -->
+          <table id="user-table" border="1" cellpadding="10">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Vai trò</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- dữ liệu sẽ được thêm ở đây -->
+            </tbody>
+          </table>
+          <!-- Pagination -->
+          <div class="pagination">
+            <button onclick="prevPage()" class="btn-prev">Trước</button>
+            <span id="page-info">Trang 1 / 1</span>
+            <button onclick="nextPage()" class="btn-next">Sau</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Modal -->
+    <div id="user-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">Thêm người dùng mới</h2>
+          <button onclick="closeModal()" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="user-form">
+            <div class="form-group">
+              <label for="user-name">Tên người dùng</label>
+              <input type="text" id="user-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="user-email">Email</label>
+              <input type="email" id="user-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="user-password">Mật khẩu</label>
+              <input type="password" id="user-password" name="password" required>
+            </div>
+            <div class="form-group">
+              <label for="user-role">Vai trò</label>
+              <select id="user-role" name="role" required>
+                <option value="user">Người dùng</option>
+                <option value="admin">Quản trị viên</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="user-avatar">Ảnh đại diện</label>
+              <input type="file" id="user-avatar" name="avatar" accept="image/*">
+              <div id="avatar-preview" class="image-preview"></div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button onclick="closeModal()" class="btn-cancel">Hủy</button>
+          <button onclick="saveUser()" class="btn-save">Lưu</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/scripts/admin.js"></script>
+  </body>
+</html> 

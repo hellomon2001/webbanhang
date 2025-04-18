@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý sản phẩm - Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <h2>Admin Panel</h2>
+        </div>
+        <ul class="menu">
+          <li>
+            <a href="/admin.html">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li class="active">
+            <a href="/admin/products.html">
+              <i class="fas fa-box"></i>
+              <span>Quản lý sản phẩm</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="/admin/orders.html">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Quản lý đơn hàng</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/admin/users.html">
+              <i class="fas fa-users"></i>
+              <span>Quản lý người dùng</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="/admin/categories.html">
+              <i class="fas fa-tags"></i>
+              <span>Quản lý danh mục</span>
+            </a>
+          </li>
+          <li>
+            <a href="/" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Đăng xuất</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+          <div class="search">
+            <input type="text" placeholder="Tìm kiếm..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="user-info">
+            <span id="admin-username">Admin</span>
+            <img src="" alt="Admin Avatar" />
+          </div>
+        </div>
+
+        <!-- Products Management Content -->
+        <div class="content">
+          <div class="section-header">
+            <h1>Quản lý sản phẩm</h1>
+            <button onclick="showAddProductModal()" class="btn-add">
+              <i class="fas fa-plus"></i>
+              Thêm sản phẩm
+            </button>
+          </div>
+
+          <!-- Filters -->
+          <div class="filters">
+            <div class="search-box">
+              <input type="text" id="product-search" placeholder="Tìm kiếm sản phẩm...">
+            </div>
+            <div class="category-filter">
+              <select id="category-select">
+                <option value="">Tất cả danh mục</option>
+              </select>
+            </div>
+            <div class="sort-filter">
+              <select id="sort-select">
+                <option value="newest">Mới nhất</option>
+                <option value="oldest">Cũ nhất</option>
+                <option value="price-asc">Giá tăng dần</option>
+                <option value="price-desc">Giá giảm dần</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Products Table -->
+          <table class="products-table">
+            <thead>
+              <tr>
+                <th>Hình ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Danh mục</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="products-table-body">
+              <!-- Products will be loaded here -->
+            </tbody>
+          </table>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <button onclick="prevPage()" class="btn-prev">Trước</button>
+            <span id="page-info">Trang 1 / 1</span>
+            <button onclick="nextPage()" class="btn-next">Sau</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">Thêm sản phẩm mới</h2>
+          <button onclick="closeModal()" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="product-form">
+            <div class="form-group">
+              <label for="product-name">Tên sản phẩm</label>
+              <input type="text" id="product-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="product-category">Danh mục</label>
+              <select id="product-category" name="category" required>
+                <option value="">Chọn danh mục</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="product-price">Giá</label>
+              <input type="number" id="product-price" name="price" min="0" required>
+            </div>
+            <div class="form-group">
+              <label for="product-quantity">Số lượng</label>
+              <input type="number" id="product-quantity" name="quantity" min="0" required>
+            </div>
+            <div class="form-group">
+              <label for="product-description">Mô tả</label>
+              <textarea id="product-description" name="description" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="product-images">Hình ảnh</label>
+              <input type="file" id="product-images" name="images" multiple accept="image/*">
+              <div id="image-preview" class="image-preview"></div>
+            </div>
+            <div class="form-group">
+              <label for="product-status">Trạng thái</label>
+              <select id="product-status" name="status" required>
+                <option value="active">Đang bán</option>
+                <option value="inactive">Ngừng bán</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button onclick="closeModal()" class="btn-cancel">Hủy</button>
+          <button onclick="saveProduct()" class="btn-save">Lưu</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/scripts/admin.js"></script>
+    <script src="/scripts/admin/products.js"></script>
+  </body>
+</html> 

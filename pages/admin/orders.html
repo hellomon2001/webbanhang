@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý đơn hàng - Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <h2>Admin Panel</h2>
+        </div>
+        <ul class="menu">
+          <li>
+            <a href="/admin.html">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/admin/products.html">
+              <i class="fas fa-box"></i>
+              <span>Quản lý sản phẩm</span>
+            </a>
+          </li>
+          
+          <li class="active">
+            <a href="/admin/orders.html">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Quản lý đơn hàng</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/admin/users.html">
+              <i class="fas fa-users"></i>
+              <span>Quản lý người dùng</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="/admin/categories.html">
+              <i class="fas fa-tags"></i>
+              <span>Quản lý danh mục</span>
+            </a>
+          </li>
+          <li>
+            <a href="/" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Đăng xuất</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+          <div class="search">
+            <input type="text" placeholder="Tìm kiếm..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="user-info">
+            <span id="admin-username">Admin</span>
+            <img src="" alt="Admin Avatar" />
+          </div>
+        </div>
+
+        <!-- Orders Management Content -->
+        <div class="content">
+          <div class="section-header">
+            <h1>Quản lý đơn hàng</h1>
+            <div class="order-stats">
+              <div class="stat-item">
+                <span class="stat-label">Tổng đơn hàng</span>
+                <span class="stat-value" id="total-orders">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Đang xử lý</span>
+                <span class="stat-value" id="processing-orders">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Đã giao</span>
+                <span class="stat-value" id="delivered-orders">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Doanh thu</span>
+                <span class="stat-value" id="total-revenue">0đ</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters -->
+          <div class="filters">
+            <div class="search-box">
+              <input type="text" id="order-search" placeholder="Tìm kiếm đơn hàng...">
+            </div>
+            <div class="status-filter">
+              <select id="status-select">
+                <option value="">Tất cả trạng thái</option>
+                <option value="pending">Chờ xác nhận</option>
+                <option value="confirmed">Đã xác nhận</option>
+                <option value="processing">Đang xử lý</option>
+                <option value="shipping">Đang giao hàng</option>
+                <option value="delivered">Đã giao hàng</option>
+                <option value="cancelled">Đã hủy</option>
+              </select>
+            </div>
+            <div class="date-filter">
+              <input type="date" id="date-from" placeholder="Từ ngày">
+              <input type="date" id="date-to" placeholder="Đến ngày">
+            </div>
+          </div>
+
+          <!-- Orders List -->
+          <div class="orders-list">
+            <!-- Order Item -->
+            <div class="order-item">
+              <div class="order-header">
+                <div class="order-info">
+                  <span class="order-id">#12345</span>
+                  <span class="order-date">12/03/2024</span>
+                </div>
+                <div class="order-status">
+                  <span class="status-badge pending">Chờ xác nhận</span>
+                </div>
+              </div>
+              <div class="order-details">
+                <div class="customer-info">
+                  <h4>Thông tin khách hàng</h4>
+                  <p>Nguyễn Văn A</p>
+                  <p>0123456789</p>
+                  <p>123 Đường ABC, Quận 1, TP.HCM</p>
+                </div>
+                <div class="order-summary">
+                  <h4>Đơn hàng</h4>
+                  <div class="order-items">
+                    <div class="order-item">
+                      <img src="/images/product1.jpg" alt="Product">
+                      <div class="item-info">
+                        <p class="item-name">Tên sản phẩm 1</p>
+                        <p class="item-price">100.000đ x 2</p>
+                      </div>
+                    </div>
+                    <div class="order-item">
+                      <img src="/images/product2.jpg" alt="Product">
+                      <div class="item-info">
+                        <p class="item-name">Tên sản phẩm 2</p>
+                        <p class="item-price">200.000đ x 1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="order-total">
+                    <p>Tổng tiền: <span>400.000đ</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="order-actions">
+                <button class="btn-view" onclick="viewOrder('12345')">Xem chi tiết</button>
+                <button class="btn-confirm" onclick="confirmOrder('12345')">Xác nhận</button>
+                <button class="btn-cancel" onclick="cancelOrder('12345')">Hủy đơn</button>
+              </div>
+            </div>
+            <!-- More order items will be loaded here -->
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <button onclick="prevPage()" class="btn-prev">Trước</button>
+            <span id="page-info">Trang 1 / 1</span>
+            <button onclick="nextPage()" class="btn-next">Sau</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div id="order-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">Chi tiết đơn hàng #12345</h2>
+          <button onclick="closeModal()" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="order-timeline">
+            <div class="timeline-item active">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Đặt hàng</h4>
+                <p>12/03/2024 10:00</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Xác nhận</h4>
+                <p>Chờ xác nhận</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Xử lý</h4>
+                <p>Chờ xử lý</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Giao hàng</h4>
+                <p>Chờ giao hàng</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Hoàn thành</h4>
+                <p>Chờ hoàn thành</p>
+              </div>
+            </div>
+          </div>
+          <div class="order-info">
+            <div class="info-group">
+              <h3>Thông tin đơn hàng</h3>
+              <p><strong>Mã đơn hàng:</strong> <span id="order-id">12345</span></p>
+              <p><strong>Ngày đặt:</strong> <span id="order-date">12/03/2024 10:00</span></p>
+              <p><strong>Trạng thái:</strong> <span id="order-status">Chờ xác nhận</span></p>
+              <p><strong>Phương thức thanh toán:</strong> <span id="payment-method">Chuyển khoản</span></p>
+            </div>
+            <div class="info-group">
+              <h3>Thông tin khách hàng</h3>
+              <p><strong>Tên:</strong> <span id="customer-name">Nguyễn Văn A</span></p>
+              <p><strong>Email:</strong> <span id="customer-email">nguyenvana@email.com</span></p>
+              <p><strong>Điện thoại:</strong> <span id="customer-phone">0123456789</span></p>
+              <p><strong>Địa chỉ:</strong> <span id="customer-address">123 Đường ABC, Quận 1, TP.HCM</span></p>
+            </div>
+          </div>
+          <div class="order-items">
+            <h3>Danh sách sản phẩm</h3>
+            <table class="items-table">
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>
+                  <th>Thành tiền</th>
+                </tr>
+              </thead>
+              <tbody id="order-items-body">
+                <!-- Order items will be loaded here -->
+              </tbody>
+            </table>
+          </div>
+          <div class="order-total">
+            <p><strong>Tổng tiền:</strong> <span id="order-total">400.000đ</span></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button onclick="closeModal()" class="btn-cancel">Đóng</button>
+          <button onclick="updateOrderStatus()" class="btn-save">Cập nhật trạng thái</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/scripts/admin.js"></script>
+  </body>
+</html> 
